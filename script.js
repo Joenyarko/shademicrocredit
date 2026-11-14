@@ -27,34 +27,43 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
-  // ================= 2. MOBILE NAVIGATION =================
+  // ================= 2. MOBILE NAVIGATION (FULL-SCREEN SLIDE FROM RIGHT) =================
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
+  const menuCloseBtn = document.getElementById('menuCloseBtn');
 
   if (menuToggle && navLinks) {
+    const openMobileMenu = () => {
+      menuToggle.classList.add('active');
+      navLinks.classList.remove('translate-x-full');
+      navLinks.classList.add('translate-x-0');
+      document.body.style.overflow = 'hidden';
+    };
+
     const closeMobileMenu = () => {
       menuToggle.classList.remove('active');
-      navLinks.classList.add('hidden');
-      navLinks.classList.remove('mobile-open');
+      navLinks.classList.add('translate-x-full');
+      navLinks.classList.remove('translate-x-0');
+      document.body.style.overflow = '';
     };
 
     menuToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      menuToggle.classList.toggle('active');
-      navLinks.classList.toggle('hidden');
-      navLinks.classList.toggle('mobile-open');
+      const isOpen = navLinks.classList.contains('translate-x-0');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
+
+    if (menuCloseBtn) {
+      menuCloseBtn.addEventListener('click', closeMobileMenu);
+    }
 
     // Close when clicking any nav link or button inside drawer
     navLinks.querySelectorAll('a, button').forEach(item => {
       item.addEventListener('click', closeMobileMenu);
-    });
-
-    // Close when clicking outside of navbar & drawer
-    document.addEventListener('click', (e) => {
-      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-        closeMobileMenu();
-      }
     });
 
     // Close when resizing window to desktop
