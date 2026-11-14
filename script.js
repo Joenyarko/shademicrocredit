@@ -66,11 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const amortizationBody = document.getElementById('amortizationBody') || document.getElementById('scheduleBody');
 
   // GOOGLE SHEET LIVE SYNC CONFIGURATION
-  // To connect the client's Google Sheet:
-  // 1. Create a Google Sheet. Cell A1: "Monthly Rate", Cell B1: 3.5% (or any number)
-  // 2. Click File -> Share -> Publish to web -> Select 'Comma-separated values (.csv)' -> Click Publish
-  // 3. Paste the generated public CSV URL into GOOGLE_SHEET_CSV_URL below:
-  const GOOGLE_SHEET_CSV_URL = '';
+  // Connected to client's live Google Sheet:
+  const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSo2DhGVMmlfMDjWyPfWvTI5irzC8MA50gqgl47I-g1hXtH64OQyD51Ktlo6HkMQDHb6o6Nod1RK-gE/pub?gid=0&single=true&output=csv';
 
   // Default fallback rate (3.5% flat per month) if sheet is offline or not configured yet
   let currentMonthlyRate = 0.035;
@@ -98,9 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loanAmountDisplay) loanAmountDisplay.textContent = 'GH₵ ' + Number(principal).toLocaleString();
     if (loanTenureDisplay) loanTenureDisplay.textContent = `${months} ${months === 1 ? 'Month' : 'Months'}`;
 
-    if (calcRateBadge) {
-      calcRateBadge.textContent = `${(monthlyRate * 100).toFixed(2)}% / Mo`;
-    }
+    const calcRateBadges = document.querySelectorAll('#calcRateBadge, .calc-rate-badge');
+    calcRateBadges.forEach(badge => {
+      badge.textContent = `${(monthlyRate * 100).toFixed(2)}% / Mo`;
+    });
 
     if (monthlyRepayment) monthlyRepayment.textContent = formatGHS(monthlyPayment);
     if (totalInterestEl) totalInterestEl.textContent = formatGHS(totalInterest);
