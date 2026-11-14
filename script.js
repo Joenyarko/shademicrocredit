@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const loanTenureInput = document.getElementById('loanTenure');
   const loanAmountDisplay = document.getElementById('loanAmountDisplay');
   const loanTenureDisplay = document.getElementById('loanTenureDisplay');
-  const calcRateBadge = document.getElementById('calcRateBadge');
   
   // Results display IDs
   const monthlyRepayment = document.getElementById('monthlyRepayment') || document.getElementById('monthlyInstallment');
@@ -61,16 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalPayableEl = document.getElementById('totalPayable') || document.getElementById('summaryTotal');
   const summaryPrincipal = document.getElementById('summaryPrincipal');
 
-  const toggleScheduleBtn = document.getElementById('toggleScheduleBtn');
-  const amortizationWrap = document.getElementById('amortizationWrap') || document.getElementById('amortizationSchedule');
-  const amortizationBody = document.getElementById('amortizationBody') || document.getElementById('scheduleBody');
+  // Dynamic range markers
+  const loanMinDisplay = document.getElementById('loanMinDisplay');
+  const loanMidDisplay = document.getElementById('loanMidDisplay');
+  const loanMaxDisplay = document.getElementById('loanMaxDisplay');
 
   // GOOGLE SHEET LIVE SYNC CONFIGURATION
   // Connected to client's live Google Sheet:
   const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSo2DhGVMmlfMDjWyPfWvTI5irzC8MA50gqgl47I-g1hXtH64OQyD51Ktlo6HkMQDHb6o6Nod1RK-gE/pub?gid=0&single=true&output=csv';
 
-  // Default fallback rate (3.5% flat per month) if sheet is offline or not configured yet
-  let currentMonthlyRate = 0.035;
+  // Default fallback settings if sheet is offline or bounds not specified
+  let currentMonthlyRate = 0.035; // 3.5% flat per month
+  let minLoanAmount = 500;
+  let maxLoanAmount = 50000;
+  let loanStep = 500;
 
   const formatGHS = (val) => {
     return 'GH₵ ' + Number(val).toLocaleString('en-US', {
@@ -89,43 +92,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const monthlyInterest = principal * monthlyRate;
     const totalInterest = monthlyInterest * months;
     const totalRepayable = principal + totalInterest;
-    const monthlyPrincipalPayment = principal / months;
     const monthlyPayment = totalRepayable / months;
 
     if (loanAmountDisplay) loanAmountDisplay.textContent = 'GH₵ ' + Number(principal).toLocaleString();
     if (loanTenureDisplay) loanTenureDisplay.textContent = `${months} ${months === 1 ? 'Month' : 'Months'}`;
 
+    // Update live rate badges and result card rate displays
     const calcRateBadges = document.querySelectorAll('#calcRateBadge, .calc-rate-badge');
     calcRateBadges.forEach(badge => {
       badge.textContent = `${(monthlyRate * 100).toFixed(2)}% / Mo`;
+    });
+
+    const summaryRateDisplays = document.querySelectorAll('#summaryRateDisplay');
+    summaryRateDisplays.forEach(el => {
+      el.textContent = `${(monthlyRate * 100).toFixed(2)}%`;
     });
 
     if (monthlyRepayment) monthlyRepayment.textContent = formatGHS(monthlyPayment);
     if (totalInterestEl) totalInterestEl.textContent = formatGHS(totalInterest);
     if (totalPayableEl) totalPayableEl.textContent = formatGHS(totalRepayable);
     if (summaryPrincipal) summaryPrincipal.textContent = formatGHS(principal);
+  };
 
-    // Generate month-by-month amortization schedule
-    if (amortizationBody) {
-      let rowsHTML = '';
-      let remainingBalance = principal;
+  const updateLoanBounds = (min, max, step) => {
+    if (!loanAmountInput) return;
+    if (min) minLoanAmount = min;
+    if (max) maxLoanAmount = max;
+    if (step) loanStep = step;
 
-      for (let m = 1; m <= months; m++) {
-        remainingBalance -= monthlyPrincipalPayment;
-        const displayBalance = Math.max(0, remainingBalance);
+    loanAmountInput.min = minLoanAmount;
+    loanAmountInput.max = maxLoanAmount;
+    loanAmountInput.step = loanStep;
 
-        rowsHTML += `
-          <tr>
-            <td class="p-3"><strong>Month ${m}</strong></td>
-            <td class="p-3">${formatGHS(monthlyPrincipalPayment)}</td>
-            <td class="p-3">${formatGHS(monthlyInterest)}</td>
-            <td class="p-3"><strong>${formatGHS(monthlyPayment)}</strong></td>
-            <td class="p-3">${formatGHS(displayBalance)}</td>
-          </tr>
-        `;
-      }
-      amortizationBody.innerHTML = rowsHTML;
-    }
+    const mid = Math.round((minLoanAmount + maxLoanAmount) / 2);
+
+    if (loanMinDisplay) loanMinDisplay.textContent = 'GH₵ ' + Number(minLoanAmount).toLocaleString();
+    if (loanMidDisplay) loanMidDisplay.textContent = 'GH₵ ' + Number(mid).toLocaleString();
+    if (loanMaxDisplay) loanMaxDisplay.textContent = 'GH₵ ' + Number(maxLoanAmount).toLocaleString();
+
+    // Adjust value if outside new bounds
+    let currentVal = parseFloat(loanAmountInput.value) || minLoanAmount;
+    if (currentVal < minLoanAmount) loanAmountInput.value = minLoanAmount;
+    if (currentVal > maxLoanAmount) loanAmountInput.value = maxLoanAmount;
   };
 
   // Live Sync Function for Google Sheets
@@ -136,46 +144,65 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!res.ok) return;
       const csv = await res.text();
       const lines = csv.split(/\r?\n/);
-      for (const line of lines) {
+
+      let foundRate = false;
+      let newMin = null;
+      let newMax = null;
+      let newStep = null;
+
+      for (const rawLine of lines) {
+        const line = rawLine.trim();
+        if (!line) continue;
         const cols = line.split(',');
-        for (const col of cols) {
-          const clean = col.replace(/["'%]/g, '').trim();
-          const val = parseFloat(clean);
-          // Look for realistic rate between 0.5% and 30% per month
-          if (!isNaN(val) && val > 0 && val < 50) {
-            currentMonthlyRate = val > 1 ? (val / 100) : val;
-            calculateLoan();
-            console.log(`[Shade Micro-Credit] Synced rate from Google Sheet: ${(currentMonthlyRate * 100).toFixed(2)}%`);
-            return;
+        const label = (cols[0] || '').toLowerCase();
+        const rawVal = cols[1] !== undefined ? cols[1] : cols[0];
+
+        // Check for min loan amount
+        if (label.includes('min')) {
+          const num = parseFloat(rawVal.replace(/[^0-9.]/g, ''));
+          if (!isNaN(num) && num > 0) newMin = num;
+        }
+        // Check for max loan amount
+        else if (label.includes('max')) {
+          const num = parseFloat(rawVal.replace(/[^0-9.]/g, ''));
+          if (!isNaN(num) && num > 0) newMax = num;
+        }
+        // Check for step
+        else if (label.includes('step')) {
+          const num = parseFloat(rawVal.replace(/[^0-9.]/g, ''));
+          if (!isNaN(num) && num > 0) newStep = num;
+        }
+        // Check for interest rate
+        else {
+          for (const col of cols) {
+            const clean = col.replace(/["'%]/g, '').trim();
+            const val = parseFloat(clean);
+            if (!isNaN(val) && val > 0 && val < 50 && !foundRate) {
+              currentMonthlyRate = val > 1 ? (val / 100) : val;
+              foundRate = true;
+              console.log(`[Shade Micro-Credit] Synced rate from Google Sheet: ${(currentMonthlyRate * 100).toFixed(2)}%`);
+            }
           }
         }
       }
+
+      if (newMin || newMax || newStep) {
+        updateLoanBounds(newMin, newMax, newStep);
+      }
+
+      calculateLoan();
     } catch (e) {
       // Silently fall back to default rate if offline
+      console.warn('[Shade Micro-Credit] Using fallback rate:', e);
     }
   };
 
   if (loanAmountInput && loanTenureInput) {
+    updateLoanBounds(minLoanAmount, maxLoanAmount, loanStep);
     loanAmountInput.addEventListener('input', calculateLoan);
     loanTenureInput.addEventListener('input', calculateLoan);
     calculateLoan();
     syncRateFromGoogleSheet();
-  }
-
-  // Toggle Amortization Schedule Table
-  if (toggleScheduleBtn && amortizationWrap) {
-    toggleScheduleBtn.addEventListener('click', () => {
-      const isHidden = amortizationWrap.style.display === 'none' || getComputedStyle(amortizationWrap).display === 'none';
-      if (isHidden) {
-        amortizationWrap.style.display = 'block';
-        toggleScheduleBtn.textContent = 'Hide Month-by-Month Amortization Schedule';
-        toggleScheduleBtn.setAttribute('aria-expanded', 'true');
-      } else {
-        amortizationWrap.style.display = 'none';
-        toggleScheduleBtn.textContent = 'View Month-by-Month Amortization Schedule';
-        toggleScheduleBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
   }
 
   // ================= 4. LOAN APPLICATION MODAL & AUTO-PREFILL =================
