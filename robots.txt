@@ -1,0 +1,9 @@
+# Robots.txt for Shade Micro-Credit Enterprise
+# Allows all search engine crawlers (Googlebot, Bingbot, etc.) to crawl and index all pages
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://shademicrocredit.com/sitemap.xml
+

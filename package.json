@@ -1,0 +1,15 @@
+{
+  "name": "shademicrocredit",
+  "version": "1.0.0",
+  "description": "A modern, high-performance multi-page static website for **Shade Micro-Credit Enterprise (SME)** in Accra, Ghana.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

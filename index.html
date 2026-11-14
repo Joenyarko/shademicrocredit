@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shade Micro-Credit Enterprise | Accessible Micro-Credit in Accra, Ghana</title>
+  <meta name="description" content="Shade Micro-Credit Enterprise delivers accessible, adaptable micro-credit to diligent individuals and small businesses in Accra, Ghana. Financial Shade - Count On Us!">
+  <meta name="keywords" content="microcredit Ghana, microfinance Accra, small business loans Lartebiokorshie, SME loans Ghana, trader loans Accra, Shade Micro-Credit Enterprise">
+  <meta name="author" content="Shade Micro-Credit Enterprise">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://shademicrocredit.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shademicrocredit.com/">
+  <meta property="og:title" content="Shade Micro-Credit Enterprise | Financial Shade - Count On Us!">
+  <meta property="og:description" content="Accessible and adaptable micro-credit fostering economic empowerment, financial stability, and long-term business growth in Accra, Ghana.">
+  <meta property="og:image" content="https://shademicrocredit.com/assets/hero-entrepreneur.jpg">
+  <meta property="og:site_name" content="Shade Micro-Credit Enterprise">
+  <meta property="og:locale" content="en_GH">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://shademicrocredit.com/">
+  <meta name="twitter:title" content="Shade Micro-Credit Enterprise | Financial Shade - Count On Us!">
+  <meta name="twitter:description" content="Empowering hardworking entrepreneurs, traders, and artisans across Accra with transparent micro-credit facilities.">
+  <meta name="twitter:image" content="https://shademicrocredit.com/assets/hero-entrepreneur.jpg">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Modern Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            shade: {
+              teal: '#008083',
+              dark: '#004d4f',
+              darker: '#003032',
+              mint: '#01a793',
+              emerald: '#02c39a',
+              light: '#f4faf8',
+              tint: '#e8f5f3',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            heading: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'sharp': '4px 4px 0px 0px #003032',
+            'sharp-teal': '4px 4px 0px 0px #008083',
+            'sharp-mint': '4px 4px 0px 0px #01a793',
+            'card': '0 4px 20px -2px rgba(0, 40, 40, 0.05), 0 0 0 1px rgba(0, 128, 131, 0.08)',
+            'card-hover': '0 12px 30px -4px rgba(0, 80, 80, 0.12), 0 0 0 1.5px #008083',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Squared geometry for UI cards, buttons, badges, and form controls */
+    .btn, 
+    button:not(.pill-btn):not(.circle-btn), 
+    .card, 
+    .product-card, 
+    input:not([type="checkbox"]):not([type="radio"]), 
+    select, 
+    textarea {
+      border-radius: 0px !important;
+    }
+    
+    /* Graphic curve support for Hero Oval and Phone Mockup */
+    .hero-oval {
+      border-radius: 46% 54% 50% 50% / 36% 44% 56% 64% !important;
+    }
+    .hero-phone {
+      border-radius: 38px !important;
+    }
+    .circle-badge,
+    .hero-circle-photo,
+    .hero-dot-disc,
+    .rounded-full {
+      border-radius: 9999px !important;
+    }
+    .pill-btn {
+      border-radius: 9999px !important;
+    }
+    .hero-tag-pill {
+      border-radius: 12px !important;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .bg-dot-matrix {
+      background-image: radial-gradient(#008083 1.5px, transparent 1.5px);
+      background-size: 16px 16px;
+    }
+    .bg-dot-matrix-white {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.3) 1.5px, transparent 1.5px);
+      background-size: 16px 16px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      border-radius: 0px !important;
+    }
+    input[type=range]::-moz-range-thumb {
+      border-radius: 0px !important;
+    }
+  </style>
+
+  <!-- Structured Data (JSON-LD) for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "Shade Micro-Credit Enterprise",
+    "alternateName": "SME Shade Micro-Credit",
+    "url": "https://shademicrocredit.com",
+    "logo": "https://shademicrocredit.com/assets/logo-light.png",
+    "image": "https://shademicrocredit.com/assets/hero-entrepreneur.jpg",
+    "description": "Accessible and adaptable micro-credit provider delivering transparent working capital and personal credit solutions to diligent individuals and small businesses in Accra, Ghana.",
+    "slogan": "Financial Shade - Count On Us!",
+    "telephone": ["+233362297113", "+233256099465"],
+    "email": "shademicrocredit@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Eduardo Mohdlana Road Opposite Mohdlana Pre-School",
+      "addressLocality": "Lartebiokorshie",
+      "addressRegion": "Greater Accra",
+      "addressCountry": "GH"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "5.549733994430533",
+      "longitude": "-0.24257162501500348"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "09:00",
+        "closes": "14:00"
+      }
+    ],
+    "priceRange": "GH₵ 500 - GH₵ 50,000"
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-shade-mint selection:text-white">
+
+  <!-- ================= CLEAN WHITE NAVBAR (MATCHING REFERENCE DESIGN) ================= -->
+  <nav class="w-full bg-white px-6 sm:px-10 lg:px-16 xl:px-20 py-6 border-b border-slate-100" id="navbar">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Logo on Far Left -->
+      <a href="index.html" class="flex items-center gap-3 group" aria-label="Shade Micro-Credit Enterprise Home">
+        <img src="assets/logo-light.png" alt="Shade Micro-Credit Enterprise Logo" class="h-10 w-auto object-contain" style="height: 40px; width: auto;">
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-slate-900 text-base sm:text-lg tracking-tight group-hover:text-shade-teal transition-colors leading-none">SHADE MICRO-CREDIT</span>
+          <span class="text-[0.65rem] tracking-[0.2em] text-shade-teal font-bold uppercase mt-1">ENTERPRISE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links in Center -->
+      <div class="hidden md:flex items-center gap-8 lg:gap-12" id="navLinksDesktop">
+        <a href="index.html" class="font-heading text-sm font-bold text-shade-teal">Home</a>
+        <a href="about.html" class="font-heading text-sm font-semibold text-slate-600 hover:text-shade-teal transition-colors">About Us</a>
+        <a href="services.html" class="font-heading text-sm font-semibold text-slate-600 hover:text-shade-teal transition-colors">Credit Solutions</a>
+        <a href="faqs.html" class="font-heading text-sm font-semibold text-slate-600 hover:text-shade-teal transition-colors">FAQs</a>
+        <a href="contact.html" class="font-heading text-sm font-semibold text-slate-600 hover:text-shade-teal transition-colors">Contact</a>
+      </div>
+
+      <!-- Action CTAs on Far Right -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="services.html#calculator" class="border border-shade-teal text-shade-teal hover:bg-emerald-50 font-heading font-semibold text-xs px-5 py-2.5 uppercase tracking-wider transition-all">
+          Get The Loan
+        </a>
+        <button class="bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-xs px-5 py-2.5 uppercase tracking-wider transition-all shadow-sm hover:shadow open-modal-btn" type="button">
+          Apply For Credit
+        </button>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden flex flex-col justify-center items-center w-10 h-10 border border-slate-200 bg-slate-50 gap-1.5 p-2" id="menuToggle" aria-label="Toggle Navigation">
+        <span class="w-full h-0.5 bg-slate-800 transition-all"></span>
+        <span class="w-full h-0.5 bg-slate-800 transition-all"></span>
+        <span class="w-full h-0.5 bg-slate-800 transition-all"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="md:hidden hidden bg-white border-b border-slate-200 px-6 py-6" id="navLinks">
+      <div class="flex flex-col gap-4">
+        <a href="index.html" class="font-heading text-sm font-bold text-shade-teal py-2 border-b border-slate-100">Home</a>
+        <a href="about.html" class="font-heading text-sm font-semibold text-slate-700 py-2 border-b border-slate-100 hover:text-shade-teal">About Us</a>
+        <a href="services.html" class="font-heading text-sm font-semibold text-slate-700 py-2 border-b border-slate-100 hover:text-shade-teal">Credit Solutions</a>
+        <a href="faqs.html" class="font-heading text-sm font-semibold text-slate-700 py-2 border-b border-slate-100 hover:text-shade-teal">FAQs</a>
+        <a href="contact.html" class="font-heading text-sm font-semibold text-slate-700 py-2 border-b border-slate-100 hover:text-shade-teal">Contact</a>
+        <div class="flex flex-col gap-2 pt-2">
+          <a href="services.html#calculator" class="w-full text-center border border-shade-teal text-shade-teal font-heading font-semibold text-xs py-3 uppercase">Get The Loan</a>
+          <button class="w-full bg-shade-teal text-white font-heading font-bold text-xs py-3 uppercase open-modal-btn" type="button">Apply For Credit</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION (MATCHING EXACT OVAL & PHONE DESIGN FROM IMAGE) ================= -->
+  <section class="relative bg-white pt-8 pb-20 lg:pt-12 lg:pb-28 overflow-hidden px-6 sm:px-10 lg:px-16 xl:px-20">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        
+        <!-- LEFT COLUMN: HEADLINE, KICKER, COPY, BUTTON & DUAL SELECTOR CARDS -->
+        <div class="lg:col-span-7 flex flex-col items-start lg:pl-6 xl:pl-10">
+          
+          <!-- Main Title (2 Lines, Massive Bold, Matches Reference Image Exactly) -->
+          <h1 class="text-5xl sm:text-6xl lg:text-[4.5rem] font-bold font-heading text-slate-900 leading-[1.06] tracking-tight mb-3">
+            Accessible &amp; adaptable<br>
+            micro-credit
+          </h1>
+
+          <!-- Kicker Tag directly UNDER the title (Matches Reference Image Exactly) -->
+          <div class="text-xs sm:text-sm font-heading font-bold uppercase tracking-widest text-[#d97757] mb-6">
+            FOR DILIGENT INDIVIDUALS &amp; ENTERPRISES
+          </div>
+
+          <!-- Lead Paragraph Description -->
+          <p class="text-slate-500 text-sm sm:text-base leading-relaxed max-w-lg mb-4 font-normal">
+            Shade Micro-Credit Enterprise delivers accessible, adaptable micro-credit to hardworking entrepreneurs, traders, and small businesses in Accra who need dependable capital for liquidity and growth.
+          </p>
+
+          <!-- BRAND SLOGAN ACCENT ROW (OPTION 2) -->
+          <div class="flex items-center gap-2.5 mb-8 text-[#008083]">
+            <span class="w-6 h-[2px] bg-[#01a793]"></span>
+            <span class="font-heading font-bold text-sm sm:text-base tracking-wide italic">
+              &ldquo;Financial Shade &mdash; Count On Us!&rdquo;
+            </span>
+          </div>
+
+          <!-- Single Green Action Button (Matches Reference Image Exactly) -->
+          <div class="mb-12">
+            <button class="bg-[#01a793] hover:bg-[#008083] text-white font-heading font-semibold text-xs sm:text-sm px-8 py-3.5 shadow-sm hover:shadow transition-all open-modal-btn" type="button">
+              Learn more
+            </button>
+          </div>
+
+          <!-- DUAL SELECTOR CARDS (EXACT MATCH TO REFERENCE DESIGN CARDS) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full max-w-xl">
+            <!-- Card 1: I want to Support -->
+            <div class="bg-white p-6 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.06)] border-t-2 border-t-[#01a793] flex items-center justify-between cursor-pointer hover:shadow-lg transition-all open-modal-btn" data-product="Business Growth Micro-Loan" role="button" tabindex="0">
+              <div>
+                <h3 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-1">I want to Support</h3>
+                <p class="text-xs text-slate-400">Check how you can help</p>
+              </div>
+              <div class="circle-btn w-9 h-9 bg-[#e8f7f4] flex items-center justify-center text-[#01a793] hover:bg-[#01a793] hover:text-white transition-colors flex-shrink-0 ml-4" style="border-radius: 9999px;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </div>
+            </div>
+
+            <!-- Card 2: I need a Loan -->
+            <div class="bg-white p-6 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.06)] flex items-center justify-between cursor-pointer hover:shadow-lg transition-all open-modal-btn" data-product="Diligent Individual Credit" role="button" tabindex="0">
+              <div>
+                <h3 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-1">I need a Loan</h3>
+                <p class="text-xs text-slate-400">Check how to take a loan</p>
+              </div>
+              <div class="circle-btn w-9 h-9 bg-[#e8f7f4] flex items-center justify-center text-[#01a793] hover:bg-[#01a793] hover:text-white transition-colors flex-shrink-0 ml-4" style="border-radius: 9999px;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: THE EXACT OVAL WITH THE PHONELIKE DESIGN ON TOP -->
+        <div class="lg:col-span-5 relative flex justify-center items-center py-10">
+          
+          <!-- Large Tilted Green Oval (Matches Reference Image Exactly) -->
+          <div class="hero-oval absolute w-[370px] sm:w-[450px] h-[310px] sm:h-[370px] bg-[#02c39a] -rotate-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-95 shadow-xl" style="border-radius: 46% 54% 50% 50% / 36% 44% 56% 64%;"></div>
+
+          <!-- Circular Dot Matrix Grid floating behind -->
+          <div class="hero-dot-disc absolute -top-10 right-4 w-44 h-44 bg-dot-matrix opacity-25 z-0 pointer-events-none" style="border-radius: 9999px;"></div>
+
+          <!-- Floating Terracotta Circle Accent -->
+          <div class="hero-dot-disc absolute -top-8 left-8 sm:left-14 w-12 h-12 bg-[#df8a68] z-0 pointer-events-none" style="border-radius: 9999px;"></div>
+
+          <!-- Floating subtle X crosses -->
+          <span class="absolute top-16 -right-6 text-[#df8a68] text-sm font-bold opacity-70 z-0 pointer-events-none">✕</span>
+          <span class="absolute top-48 -left-6 text-[#df8a68] text-sm font-bold opacity-70 z-0 pointer-events-none">✕</span>
+
+          <!-- Floating green dot at bottom right -->
+          <div class="hero-dot-disc absolute bottom-8 -right-6 w-4 h-4 bg-[#02c39a] z-0 pointer-events-none" style="border-radius: 9999px;"></div>
+
+          <!-- Mobile Phone Mockup Device (Sitting on top of the oval) -->
+          <div class="hero-phone relative z-10 w-72 sm:w-[310px] bg-white p-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.18)] border-[6px] border-white" style="border-radius: 38px;">
+            <!-- Phone Notch Pill -->
+            <div class="w-20 h-4 bg-slate-100 mx-auto mb-2" style="border-radius: 9999px;"></div>
+
+            <!-- Phone Status Bar -->
+            <div class="flex items-center justify-between text-[0.7rem] font-bold text-slate-800 pb-2 mb-2 border-b border-slate-50">
+              <span>9:41</span>
+              <div class="flex items-center gap-1.5 text-[0.65rem]">
+                <span>●●●</span>
+                <span>📶</span>
+                <span>🔋</span>
+              </div>
+            </div>
+
+            <!-- App Header Inside Phone -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <img src="assets/logo-light.png" alt="Shade Micro-Credit Logo" class="h-6 w-auto" style="height: 24px; width: auto;">
+              <span class="text-slate-800 text-lg cursor-pointer">☰</span>
+            </div>
+
+            <!-- Card Title Inside Phone -->
+            <div class="text-[0.68rem] font-heading font-bold text-slate-400 uppercase tracking-wider mb-1">RETAIL STORE</div>
+            <h2 class="font-heading font-bold text-slate-900 text-base leading-tight mb-3">To improve provision business</h2>
+
+            <!-- Progress Bar Indicator -->
+            <div class="mb-3">
+              <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                <span class="text-shade-teal">82%</span>
+                <span class="text-slate-400">18%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-100 overflow-hidden" style="border-radius: 9999px;">
+                <div class="h-full bg-gradient-to-r from-shade-teal to-shade-mint" style="width: 82%; border-radius: 9999px;"></div>
+              </div>
+              <div class="text-[0.62rem] text-slate-400 mt-1">Yes Powered by Shade SME</div>
+            </div>
+
+            <!-- Small Green Pill Button -->
+            <div class="mb-3">
+              <button class="pill-btn bg-[#e8f7f4] text-[#008083] font-heading font-bold text-[0.68rem] px-3.5 py-1 uppercase tracking-wider" style="border-radius: 9999px;" type="button">
+                Active Credit
+              </button>
+            </div>
+
+            <!-- Circular Business Photo Frame (Matches Reference Image Exactly) -->
+            <div class="hero-circle-photo w-28 h-28 overflow-hidden border-4 border-slate-50 shadow-md mx-auto my-3" style="border-radius: 9999px;">
+              <img src="assets/hero-entrepreneur.jpg" alt="Black Ghanaian entrepreneur inside her well-stocked store in Accra" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Floating Amount Tag popping out of bottom edge (Exact Reference Badge) -->
+            <div class="hero-tag-pill absolute -bottom-4 left-6 bg-white border border-slate-100 shadow-xl px-4 py-2 flex items-center gap-2 z-20" style="border-radius: 14px;">
+              <span class="text-[#df8a68] font-bold text-sm">🪙</span>
+              <span class="font-heading font-bold text-slate-800 text-sm">GH₵ 5,000.00</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR PARTNERS / TRUST STRIP ================= -->
+  <section class="bg-white border-y border-slate-100 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center justify-center gap-3 px-5 py-2.5 bg-slate-50 border border-slate-200 text-slate-700 font-heading font-bold text-xs sm:text-sm tracking-wider uppercase shadow-sm">
+        <span class="w-2.5 h-2.5 rounded-full bg-shade-teal animate-pulse" style="border-radius: 9999px;"></span>
+        Trusted by local enterprises and trade associations across Greater Accra &amp; Ghana
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURE PRODUCT CARDS (EOSIUM 2-COLUMN SECTION) ================= -->
+  <section class="bg-slate-50/60 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="inline-block px-3 py-1 bg-emerald-50 border-l-2 border-shade-teal text-shade-teal font-heading text-xs font-bold tracking-widest uppercase mb-3">CREDIT PACKAGES</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-4">Structured For Grassroots Growth</h2>
+        <div class="w-12 h-1 bg-gradient-to-r from-shade-teal to-shade-mint mx-auto mb-4"></div>
+        <p class="text-slate-600 text-base leading-relaxed">
+          Transparent, accessible, and structured around your trade cycle. Experience micro-lending designed with respect for your hard work.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- PRODUCT 1: BUSINESS GROWTH -->
+        <div class="bg-white border border-slate-200 p-8 sm:p-10 shadow-sm hover:shadow-sharp-teal transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-heading font-bold text-xs bg-emerald-50 text-shade-teal px-3 py-1 uppercase tracking-wider">ENTERPRISE SCALE</span>
+              <span class="font-heading font-bold text-shade-teal text-base sm:text-lg">GH₵ 0.00</span>
+            </div>
+            <h3 class="text-2xl font-bold font-heading text-slate-900 mb-3">Business Growth Micro-Credit</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Direct working capital for shopkeepers, artisans, and enterprise operators expanding premises, purchasing raw materials, or ordering wholesale inventory.
+            </p>
+            <ul class="space-y-3 mb-8 text-sm text-slate-700">
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 bg-shade-teal flex-shrink-0"></span>
+                <span>Rapid 24&ndash;48 hour assessment at your place of trade</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 bg-shade-teal flex-shrink-0"></span>
+                <span>Flexible 1 to 12 month repayment tenures</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 bg-shade-teal flex-shrink-0"></span>
+                <span>Direct disbursement via Mobile Money or commercial bank</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 bg-shade-teal flex-shrink-0"></span>
+                <span>Graduating limits for loyal and prompt clients</span>
+              </li>
+            </ul>
+          </div>
+          <button class="font-heading font-bold text-xs text-shade-teal uppercase tracking-wider inline-flex items-center gap-2 border-b-2 border-shade-teal pb-1 hover:text-shade-mint hover:border-shade-mint transition-colors self-start open-modal-btn" data-product="Business Growth Micro-Loan" type="button">
+            Apply For Business Credit &rarr;
+          </button>
+        </div>
+
+        <!-- PRODUCT 2: DILIGENT INDIVIDUAL & MARKET VENDOR -->
+        <div class="bg-white border border-slate-200 p-8 sm:p-10 shadow-sm hover:shadow-sharp-teal transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-heading font-bold text-xs bg-emerald-50 text-shade-mint px-3 py-1 uppercase tracking-wider">MARKET &amp; PERSONAL</span>
+              <span class="font-heading font-bold text-shade-mint text-base sm:text-lg">GH₵ 0.00</span>
+            </div>
+            <h3 class="text-2xl font-bold font-heading text-slate-900 mb-3">Diligent Individual &amp; Vendor Credit</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Short-term inventory advances and liquidity solutions for market vendors and diligent wage earners handling school fees, medical bills, or weekly market supplies.
+            </p>
+            <ul class="space-y-3 mb-8 text-sm text-slate-700">
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 bg-shade-mint flex-shrink-0"></span>
+                <span>Weekly or monthly repayment schedules matching your cashflow</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 bg-shade-mint flex-shrink-0"></span>
+                <span>Simple verification with valid Ghana Card and proof of residence</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 bg-shade-mint flex-shrink-0"></span>
+                <span>Zero compounding penalty structures or hidden processing fees</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 bg-shade-mint flex-shrink-0"></span>
+                <span>Courteous and compassionate credit counseling</span>
+              </li>
+            </ul>
+          </div>
+          <button class="font-heading font-bold text-xs text-shade-mint uppercase tracking-wider inline-flex items-center gap-2 border-b-2 border-shade-mint pb-1 hover:text-shade-teal hover:border-shade-teal transition-colors self-start open-modal-btn" data-product="Diligent Individual Credit" type="button">
+            Apply For Individual Credit &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS (EOSIUM 3 NUMBERED PILLARS) ================= -->
+  <section class="bg-white py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="inline-block px-3 py-1 bg-emerald-50 border-l-2 border-shade-teal text-shade-teal font-heading text-xs font-bold tracking-widest uppercase mb-3">TRANSPARENT PROCESS</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-4">How It Works</h2>
+        <div class="w-12 h-1 bg-gradient-to-r from-shade-teal to-shade-mint mx-auto mb-4"></div>
+        <p class="text-slate-600 text-base leading-relaxed">
+          Three straightforward steps from initial consultation to fund disbursement. No tedious bureaucracy.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- PILLAR 1 -->
+        <div class="bg-white border border-slate-200 p-8 shadow-sm hover:border-shade-teal hover:shadow-sharp-teal transition-all">
+          <div class="font-heading font-bold text-4xl text-shade-teal mb-3">1.</div>
+          <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Submit Request</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Complete our simple online application form or walk directly into our Lartebiokorshie branch opposite Mohdlana Pre-School with your Ghana Card and business details.
+          </p>
+        </div>
+
+        <!-- PILLAR 2 -->
+        <div class="bg-white border border-slate-200 p-8 shadow-sm hover:border-shade-teal hover:shadow-sharp-teal transition-all">
+          <div class="font-heading font-bold text-4xl text-shade-teal mb-3">2.</div>
+          <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Rapid Verification</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Our experienced credit officers review your application and visit your trade premises within 24 to 48 hours to assess cashflow and recommend an adaptable repayment plan.
+          </p>
+        </div>
+
+        <!-- PILLAR 3 -->
+        <div class="bg-white border border-slate-200 p-8 shadow-sm hover:border-shade-teal hover:shadow-sharp-teal transition-all">
+          <div class="font-heading font-bold text-4xl text-shade-teal mb-3">3.</div>
+          <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Direct Disbursement</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Once approved, funds are disbursed straight to your MTN Mobile Money, Telecel Cash, AT Money, or bank account so you can restock or invest without delay.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button class="bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold px-8 py-4 text-xs uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-sharp-teal open-modal-btn" type="button">
+          Get Started Now
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE LOAN CALCULATOR SECTION ================= -->
+  <section class="bg-shade-light border-y border-slate-200 py-20 lg:py-28" id="calculator">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- LEFT: EXPLANATION -->
+        <div class="lg:col-span-5 flex flex-col items-start">
+          <span class="inline-block px-3 py-1 bg-white border-l-2 border-shade-teal text-shade-teal font-heading text-xs font-bold tracking-widest uppercase mb-4 shadow-sm">INSTANT ESTIMATE</span>
+          <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-4">Transparent Repayment Planning</h2>
+          <div class="w-12 h-1 bg-shade-teal mb-6"></div>
+          <p class="text-slate-600 text-base leading-relaxed mb-6">
+            We believe in complete transparency with zero hidden deductions. Use our interactive calculator to explore adaptable repayment terms tailored to your real cashflow.
+          </p>
+
+          <div class="bg-white border border-slate-200 p-6 shadow-sm mb-6 w-full">
+            <h4 class="font-heading font-bold text-slate-900 text-sm mb-2">Our Honest Lending Guarantee</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              No unannounced service charges, no compounding late fees. What you calculate here is the exact schedule your credit agreement will follow.
+            </p>
+          </div>
+
+          <a href="services.html" class="border border-shade-teal text-shade-teal hover:bg-white font-heading font-semibold text-xs px-6 py-3 uppercase tracking-wider transition-colors shadow-sm">
+            Explore All 5 Credit Facilities &rarr;
+          </a>
+        </div>
+
+        <!-- RIGHT: CALCULATOR CARD -->
+        <div class="lg:col-span-7">
+          <div class="bg-white border-t-4 border-t-shade-teal border border-slate-200 p-8 sm:p-10 shadow-lg">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-8">
+              <h3 class="font-heading font-bold text-2xl text-slate-900">Loan Calculator</h3>
+              <span class="font-heading font-bold text-[0.68rem] bg-emerald-50 text-shade-teal px-3 py-1 tracking-wider uppercase">LIVE ESTIMATOR</span>
+            </div>
+
+            <!-- Amount Slider -->
+            <div class="mb-8">
+              <div class="flex justify-between items-center mb-2">
+                <label for="loanAmount" class="font-heading font-semibold text-sm text-slate-800">Loan Amount (GH₵):</label>
+                <span class="font-heading font-bold text-xl text-shade-teal" id="loanAmountDisplay">GH₵ 5,000</span>
+              </div>
+              <input type="range" min="500" max="20000" step="500" value="5000" class="w-full h-2 bg-slate-200 cursor-pointer accent-shade-teal" id="loanAmount">
+              <div class="flex justify-between text-xs text-slate-400 mt-2">
+                <span>GH₵ 500</span>
+                <span>GH₵ 10,000</span>
+                <span>GH₵ 20,000</span>
+              </div>
+            </div>
+
+            <!-- Tenure Slider -->
+            <div class="mb-8">
+              <div class="flex justify-between items-center mb-2">
+                <label for="loanTenure" class="font-heading font-semibold text-sm text-slate-800">Repayment Tenure (Months):</label>
+                <span class="font-heading font-bold text-xl text-shade-teal" id="loanTenureDisplay">6 Months</span>
+              </div>
+              <input type="range" min="1" max="12" step="1" value="6" class="w-full h-2 bg-slate-200 cursor-pointer accent-shade-teal" id="loanTenure">
+              <div class="flex justify-between text-xs text-slate-400 mt-2">
+                <span>1 Month</span>
+                <span>6 Months</span>
+                <span>12 Months</span>
+              </div>
+            </div>
+
+            <!-- Calculated Results -->
+            <div class="bg-slate-50 border border-slate-200 border-l-4 border-l-shade-teal p-6 mb-8 shadow-sm">
+              <div class="flex items-center justify-between pb-4 border-b border-dashed border-slate-200 mb-4">
+                <span class="font-heading font-semibold text-sm text-slate-700">Monthly Repayment:</span>
+                <span class="font-heading font-bold text-2xl sm:text-3xl text-shade-teal" id="monthlyRepayment">GH₵ 1,008.33</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <span class="text-[0.72rem] text-slate-500 uppercase tracking-wider block">Total Interest</span>
+                  <span class="font-heading font-bold text-base text-slate-900" id="totalInterest">GH₵ 1,050.00</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-[0.72rem] text-slate-500 uppercase tracking-wider block">Total Amount Payable</span>
+                  <span class="font-heading font-bold text-base text-slate-900" id="totalPayable">GH₵ 6,050.00</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Amortization Schedule Accordion Toggle -->
+            <div class="mb-6">
+              <button type="button" class="w-full border border-slate-200 text-slate-700 hover:border-shade-teal hover:text-shade-teal font-heading font-semibold text-xs py-3 uppercase tracking-wider transition-colors" id="toggleScheduleBtn" aria-expanded="false">
+                View Month-by-Month Amortization Schedule
+              </button>
+              <div class="mt-4 max-h-64 overflow-y-auto border border-slate-200 shadow-sm hidden" id="amortizationWrap">
+                <table class="w-full text-left text-xs border-collapse">
+                  <thead class="sticky top-0 bg-shade-teal text-white font-heading uppercase text-[0.7rem] tracking-wider">
+                    <tr>
+                      <th class="p-3">Month</th>
+                      <th class="p-3">Principal</th>
+                      <th class="p-3">Interest</th>
+                      <th class="p-3">Total Due</th>
+                      <th class="p-3">Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody id="amortizationBody" class="divide-y divide-slate-100 bg-white">
+                    <!-- Populated dynamically via script.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <button class="w-full bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold py-4 text-xs uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-sharp-teal open-modal-btn" id="proceedWithCalcBtn" type="button">
+              Proceed With This Loan Request
+            </button>
+            <p class="text-[0.72rem] text-slate-400 text-center mt-4">
+              * Indicative calculation based on our competitive monthly interest rates. Final terms are confirmed upon verification.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= "SOUNDS GOOD?" FULL-WIDTH GREEN CTA BANNER ================= -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-shade-teal via-shade-mint to-shade-teal text-white p-10 sm:p-14 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+        <!-- Dot matrix overlay -->
+        <div class="absolute top-0 left-0 w-64 h-full bg-dot-matrix-white opacity-20 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-2xl">
+          <h2 class="text-3xl sm:text-4xl font-bold font-heading mb-3">Sounds good?</h2>
+          <p class="text-white/90 text-base leading-relaxed">
+            Stand under our financial shade. Count on us for the honest, accessible, and adaptable working capital your business needs to flourish.
+          </p>
+        </div>
+
+        <div class="relative z-10 flex-shrink-0">
+          <button class="bg-white hover:bg-slate-50 text-shade-darker font-heading font-bold px-8 py-4 text-xs uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-sharp open-modal-btn" type="button">
+            Apply For Micro-Credit Today
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLEAN WHITE / LIGHT FOOTER (MATCHING EOSIUM FOOTER) ================= -->
+  <footer class="bg-white border-t border-slate-200 pt-16 pb-12 text-slate-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-12">
+        <!-- BRAND & SOCIAL COLUMN -->
+        <div class="lg:col-span-4 flex flex-col items-start">
+          <a href="index.html" class="flex items-center gap-3 mb-4" aria-label="Shade Micro-Credit Enterprise">
+            <img src="assets/logo-light.png" alt="Shade Micro-Credit Logo" class="h-10 w-auto border border-slate-200 p-1 bg-white" style="height: 40px; width: auto;">
+            <div class="flex flex-col">
+              <span class="font-heading font-bold text-slate-900 text-base leading-tight">SHADE MICRO-CREDIT</span>
+              <span class="text-[0.65rem] tracking-[0.2em] text-shade-teal font-bold uppercase">ENTERPRISE</span>
+            </div>
+          </a>
+          <p class="text-shade-teal font-heading font-bold text-sm mb-3">&ldquo;Financial Shade &mdash; Count On Us!&rdquo;</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-6">
+            To deliver accessible and adaptable micro-credit to diligent individuals, fostering economic empowerment, financial stability and long-term growth with integrity and respect.
+          </p>
+
+          <!-- SOCIAL MEDIA SVG ICONS ONLY -->
+          <div class="w-full">
+            <span class="text-[0.7rem] font-heading font-bold text-slate-400 uppercase tracking-widest block mb-3">FOLLOW US</span>
+            <div class="flex items-center gap-2">
+              <!-- WhatsApp -->
+              <a href="https://wa.me/233256099465" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center bg-slate-50 border border-slate-200 text-shade-teal hover:bg-shade-teal hover:text-white hover:border-shade-teal transition-all" aria-label="Chat on WhatsApp">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M12.031 2C6.512 2 2.022 6.488 2.022 12.008c0 1.77.464 3.498 1.345 5.032L2 22l5.127-1.344c1.474.808 3.14 1.233 4.904 1.233h.004c5.517 0 10.007-4.488 10.007-10.008C22.042 6.488 17.551 2 12.031 2zm0 18.283c-1.503 0-2.977-.404-4.264-1.168l-.306-.182-3.167.831.846-3.088-.2-.317a8.232 8.232 0 01-1.264-4.351c0-4.568 3.717-8.285 8.289-8.285 2.213 0 4.293.863 5.858 2.428a8.232 8.232 0 012.427 5.858c0 4.569-3.717 8.284-8.289 8.284zm4.542-6.208c-.249-.125-1.474-.727-1.703-.81-.229-.083-.396-.125-.562.125-.166.249-.646.81-.791.977-.146.166-.291.187-.541.062s-1.057-.39-2.012-1.242c-.744-.663-1.246-1.482-1.392-1.731-.146-.249-.016-.384.108-.508.112-.112.249-.291.374-.437.125-.146.166-.249.249-.416.083-.166.042-.312-.021-.437s-.562-1.353-.77-1.853c-.203-.487-.41-.421-.562-.429l-.479-.008c-.166 0-.437.062-.666.312s-.874.854-.874 2.082c0 1.228.895 2.415 1.02 2.582.125.166 1.76 2.688 4.264 3.769.596.257 1.061.411 1.424.527.599.191 1.144.164 1.575.1s.874-.357 1.04-.833c.166-.476.166-.884.116-.97-.049-.085-.216-.146-.465-.271z"/>
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center bg-slate-50 border border-slate-200 text-shade-teal hover:bg-shade-teal hover:text-white hover:border-shade-teal transition-all" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center bg-slate-50 border border-slate-200 text-shade-teal hover:bg-shade-teal hover:text-white hover:border-shade-teal transition-all" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2m1.4 9.74V9.95H5.06v8.55h2.8z"/>
+                </svg>
+              </a>
+              <!-- X -->
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center bg-slate-50 border border-slate-200 text-shade-teal hover:bg-shade-teal hover:text-white hover:border-shade-teal transition-all" aria-label="X">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center bg-slate-50 border border-slate-200 text-shade-teal hover:bg-shade-teal hover:text-white hover:border-shade-teal transition-all" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="lg:col-span-2">
+          <h4 class="font-heading font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 pb-2 border-b-2 border-shade-teal inline-block">Pages</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="index.html" class="hover:text-shade-teal transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-shade-teal transition-colors">About Shade</a></li>
+            <li><a href="services.html" class="hover:text-shade-teal transition-colors">Credit Solutions</a></li>
+            <li><a href="#calculator" class="hover:text-shade-teal transition-colors">Loan Calculator</a></li>
+            <li><a href="faqs.html" class="hover:text-shade-teal transition-colors">Frequently Asked Questions</a></li>
+            <li><a href="contact.html" class="hover:text-shade-teal transition-colors">Branch Location &amp; Map</a></li>
+          </ul>
+        </div>
+
+        <!-- CREDIT SOLUTIONS -->
+        <div class="lg:col-span-3">
+          <h4 class="font-heading font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 pb-2 border-b-2 border-shade-teal inline-block">Solutions</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="services.html" class="hover:text-shade-teal transition-colors">Business Growth Micro-Loan</a></li>
+            <li><a href="services.html" class="hover:text-shade-teal transition-colors">Diligent Individual Credit</a></li>
+            <li><a href="services.html" class="hover:text-shade-teal transition-colors">Market Vendor Stock Financing</a></li>
+            <li><a href="services.html" class="hover:text-shade-teal transition-colors">Emergency Working Capital</a></li>
+            <li><a href="services.html" class="hover:text-shade-teal transition-colors">Artisan Equipment Lease</a></li>
+          </ul>
+        </div>
+
+        <!-- BRANCH OFFICE & CONTACT -->
+        <div class="lg:col-span-3">
+          <h4 class="font-heading font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 pb-2 border-b-2 border-shade-teal inline-block">Branch Office</h4>
+          <div class="text-xs space-y-1.5 leading-relaxed text-slate-500">
+            <p class="font-bold text-slate-800">Shade Micro-Credit Enterprise</p>
+            <p>Eduardo Mohdlana Road</p>
+            <p>Opposite Mohdlana Pre-School</p>
+            <p>Lartebiokorshie, Accra, Ghana</p>
+            <div class="pt-2 space-y-1">
+              <p><strong>Direct Line:</strong> <a href="tel:0362297113" class="text-shade-teal font-bold hover:underline">0362297113</a></p>
+              <p><strong>Mobile/WhatsApp:</strong> <a href="tel:0256099465" class="text-shade-teal font-bold hover:underline">0256099465</a></p>
+              <p><strong>Email:</strong> <a href="mailto:shademicrocredit@gmail.com" class="text-shade-teal hover:underline">shademicrocredit@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM BAR -->
+      <div class="border-t border-slate-100 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p>&copy; 2026 Shade Micro-Credit Enterprise. All Rights Reserved. &ldquo;Financial Shade &mdash; Count On Us!&rdquo;</p>
+        <div class="flex items-center gap-3">
+          <a href="about.html" class="hover:text-shade-teal transition-colors">Integrity &amp; Values</a>
+          <span>&bull;</span>
+          <a href="faqs.html" class="hover:text-shade-teal transition-colors">Borrower Requirements</a>
+          <span>&bull;</span>
+          <a href="contact.html" class="hover:text-shade-teal transition-colors">Directions to Branch</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= LOAN APPLICATION MODAL ================= -->
+  <div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto" id="loanModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="relative bg-white w-full max-w-2xl border-t-4 border-t-shade-teal border border-slate-200 shadow-2xl p-6 sm:p-8 my-8">
+      <div class="flex items-start justify-between pb-4 border-b border-slate-100 mb-6">
+        <div>
+          <span class="text-[0.68rem] font-heading font-bold text-shade-teal uppercase tracking-widest block">SHADE MICRO-CREDIT</span>
+          <h2 class="text-2xl font-bold font-heading text-slate-900" id="modalTitle">Apply For Micro-Credit</h2>
+        </div>
+        <button class="w-8 h-8 flex items-center justify-center border border-slate-200 text-slate-500 hover:text-slate-900 hover:bg-slate-50 text-xl font-bold" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div>
+        <p class="text-xs text-slate-500 mb-6 leading-relaxed">
+          Fill out this brief application form. Our credit desk in Lartebiokorshie will review your details and reach out within 24 to 48 hours.
+        </p>
+
+        <form id="loanAppForm" class="space-y-4" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="fullName" class="block text-xs font-semibold text-slate-700 mb-1">Full Name (as on Ghana Card) *</label>
+              <input type="text" id="fullName" name="fullName" required placeholder="e.g. Kwame Mensah" class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal">
+            </div>
+            <div>
+              <label for="phoneNumber" class="block text-xs font-semibold text-slate-700 mb-1">Active Phone / WhatsApp *</label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="e.g. 0244123456" class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="ghanaCard" class="block text-xs font-semibold text-slate-700 mb-1">Ghana Card Number *</label>
+              <input type="text" id="ghanaCard" name="ghanaCard" required placeholder="GHA-000000000-0" class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal">
+            </div>
+            <div>
+              <label for="emailAddress" class="block text-xs font-semibold text-slate-700 mb-1">Email Address (Optional)</label>
+              <input type="email" id="emailAddress" name="emailAddress" placeholder="you@domain.com" class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="businessLocation" class="block text-xs font-semibold text-slate-700 mb-1">Business / Residential Location *</label>
+              <input type="text" id="businessLocation" name="businessLocation" required placeholder="e.g. Lartebiokorshie, Makola" class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal">
+            </div>
+            <div>
+              <label for="preferredProduct" class="block text-xs font-semibold text-slate-700 mb-1">Preferred Credit Solution *</label>
+              <select id="preferredProduct" name="preferredProduct" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal bg-white">
+                <option value="Business Growth Micro-Loan">Business Growth Micro-Loan</option>
+                <option value="Diligent Individual Credit">Diligent Individual Credit</option>
+                <option value="Market Vendor Quick Stock">Market Vendor Quick Stock</option>
+                <option value="Emergency Working Capital">Emergency Working Capital</option>
+                <option value="Artisan Equipment Lease">Artisan Equipment Lease</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="requestedAmount" class="block text-xs font-semibold text-slate-700 mb-1">Requested Amount (GH₵) *</label>
+              <input type="number" id="requestedAmount" name="requestedAmount" min="500" max="50000" step="500" value="5000" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal">
+            </div>
+            <div>
+              <label for="repaymentTenure" class="block text-xs font-semibold text-slate-700 mb-1">Repayment Period (Months) *</label>
+              <select id="repaymentTenure" name="repaymentTenure" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal bg-white">
+                <option value="1">1 Month</option>
+                <option value="3">3 Months</option>
+                <option value="6" selected>6 Months</option>
+                <option value="9">9 Months</option>
+                <option value="12">12 Months</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="businessPurpose" class="block text-xs font-semibold text-slate-700 mb-1">Nature of Business &amp; Loan Purpose *</label>
+            <textarea id="businessPurpose" name="businessPurpose" rows="3" required placeholder="Describe what you sell and how the credit facility will be used..." class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal"></textarea>
+          </div>
+
+          <div class="text-[0.68rem] text-slate-400 leading-normal">
+            By submitting, you agree to allow Shade Micro-Credit Enterprise to verify your identification under Ghana data protection guidelines.
+          </div>
+
+          <div>
+            <button type="submit" class="w-full bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold py-3.5 text-xs uppercase tracking-wider transition-all duration-200 shadow-md">
+              Submit Loan Application &rarr;
+            </button>
+          </div>
+        </form>
+
+        <div class="hidden text-center py-8" id="modalSuccess">
+          <div class="w-12 h-12 bg-emerald-50 text-shade-teal flex items-center justify-center font-bold text-xl mx-auto mb-4 border border-shade-mint">✓</div>
+          <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Application Successfully Submitted!</h3>
+          <p class="text-xs text-slate-600 max-w-md mx-auto mb-6 leading-relaxed">
+            Thank you for trusting Shade Micro-Credit Enterprise. A dedicated credit officer will review your application and contact you at the provided phone number within 24 to 48 hours.
+          </p>
+          <button type="button" class="bg-shade-teal text-white font-heading font-bold text-xs px-6 py-2.5 uppercase" id="successCloseBtn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= COOKIE CONSENT BANNER ================= -->
+  <aside class="fixed bottom-0 inset-x-0 z-50 bg-slate-900 text-white p-4 border-t-2 border-t-shade-mint shadow-2xl transition-all duration-300 translate-y-full" id="cookieBanner" role="region" aria-label="Cookie consent">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-xs max-w-3xl">
+        <span class="font-heading font-bold text-shade-mint uppercase tracking-wider block mb-1">PRIVACY &amp; COOKIES</span>
+        <p class="text-slate-300 leading-relaxed">
+          Shade Micro-Credit Enterprise uses essential cookies to remember your loan preferences and ensure a secure browsing experience. By clicking &ldquo;Accept Cookies&rdquo;, you consent to our transparent data practices.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <button type="button" class="bg-shade-mint hover:bg-shade-teal text-white font-heading font-bold text-xs px-5 py-2.5 uppercase tracking-wider transition-colors" id="acceptCookiesBtn">Accept Cookies</button>
+        <button type="button" class="border border-slate-600 hover:bg-slate-800 text-slate-300 font-heading font-semibold text-xs px-4 py-2.5 uppercase tracking-wider transition-colors" id="declineCookiesBtn">Essential Only</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <a href="https://wa.me/233256099465?text=Hello%20Shade%20Micro-Credit%20Enterprise,%20I%20would%20like%20to%20inquire%20about%20your%20micro-credit%20facilities." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 sm:px-5 sm:py-3 shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2 font-heading font-bold text-xs uppercase tracking-wider group" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+      <path d="M12.031 2C6.512 2 2.022 6.488 2.022 12.008c0 1.77.464 3.498 1.345 5.032L2 22l5.127-1.344c1.474.808 3.14 1.233 4.904 1.233h.004c5.517 0 10.007-4.488 10.007-10.008C22.042 6.488 17.551 2 12.031 2zm0 18.283c-1.503 0-2.977-.404-4.264-1.168l-.306-.182-3.167.831.846-3.088-.2-.317a8.232 8.232 0 01-1.264-4.351c0-4.568 3.717-8.285 8.289-8.285 2.213 0 4.293.863 5.858 2.428a8.232 8.232 0 012.427 5.858c0 4.569-3.717 8.284-8.289 8.284zm4.542-6.208c-.249-.125-1.474-.727-1.703-.81-.229-.083-.396-.125-.562.125-.166.249-.646.81-.791.977-.146.166-.291.187-.541.062s-1.057-.39-2.012-1.242c-.744-.663-1.246-1.482-1.392-1.731-.146-.249-.016-.384.108-.508.112-.112.249-.291.374-.437.125-.146.166-.249.249-.416.083-.166.042-.312-.021-.437s-.562-1.353-.77-1.853c-.203-.487-.41-.421-.562-.429l-.479-.008c-.166 0-.437.062-.666.312s-.874.854-.874 2.082c0 1.228.895 2.415 1.02 2.582.125.166 1.76 2.688 4.264 3.769.596.257 1.061.411 1.424.527.599.191 1.144.164 1.575.1s.874-.357 1.04-.833c.166-.476.166-.884.116-.97-.049-.085-.216-.146-.465-.271z"/>
+    </svg>
+    <span class="hidden sm:inline">Chat On WhatsApp</span>
+  </a>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="script.js"></script>
+</body>
+</html>
