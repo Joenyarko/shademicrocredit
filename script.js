@@ -48,11 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ================= 3. INTERACTIVE LOAN CALCULATOR & AMORTIZATION TABLE =================
+  // ================= 3. INTERACTIVE LOAN CALCULATOR & GOOGLE SHEETS LIVE SYNC =================
   const loanAmountInput = document.getElementById('loanAmount');
   const loanTenureInput = document.getElementById('loanTenure');
   const loanAmountDisplay = document.getElementById('loanAmountDisplay');
   const loanTenureDisplay = document.getElementById('loanTenureDisplay');
+  const calcRateBadge = document.getElementById('calcRateBadge');
   
   // Results display IDs
   const monthlyRepayment = document.getElementById('monthlyRepayment') || document.getElementById('monthlyInstallment');
@@ -63,6 +64,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleScheduleBtn = document.getElementById('toggleScheduleBtn');
   const amortizationWrap = document.getElementById('amortizationWrap') || document.getElementById('amortizationSchedule');
   const amortizationBody = document.getElementById('amortizationBody') || document.getElementById('scheduleBody');
+
+  // GOOGLE SHEET LIVE SYNC CONFIGURATION
+  // To connect the client's Google Sheet:
+  // 1. Create a Google Sheet. Cell A1: "Monthly Rate", Cell B1: 3.5% (or any number)
+  // 2. Click File -> Share -> Publish to web -> Select 'Comma-separated values (.csv)' -> Click Publish
+  // 3. Paste the generated public CSV URL into GOOGLE_SHEET_CSV_URL below:
+  const GOOGLE_SHEET_CSV_URL = '';
+
+  // Default fallback rate (3.5% flat per month) if sheet is offline or not configured yet
+  let currentMonthlyRate = 0.035;
 
   const formatGHS = (val) => {
     return 'GH₵ ' + Number(val).toLocaleString('en-US', {
@@ -77,8 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const principal = parseFloat(loanAmountInput.value) || 5000;
     const months = parseInt(loanTenureInput.value, 10) || 6;
 
-    // Standard transparent monthly interest rate: 3.5%
-    const monthlyRate = 0.035;
+    const monthlyRate = currentMonthlyRate;
     const monthlyInterest = principal * monthlyRate;
     const totalInterest = monthlyInterest * months;
     const totalRepayable = principal + totalInterest;
@@ -87,6 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (loanAmountDisplay) loanAmountDisplay.textContent = 'GH₵ ' + Number(principal).toLocaleString();
     if (loanTenureDisplay) loanTenureDisplay.textContent = `${months} ${months === 1 ? 'Month' : 'Months'}`;
+
+    if (calcRateBadge) {
+      calcRateBadge.textContent = `${(monthlyRate * 100).toFixed(2)}% / Mo`;
+    }
 
     if (monthlyRepayment) monthlyRepayment.textContent = formatGHS(monthlyPayment);
     if (totalInterestEl) totalInterestEl.textContent = formatGHS(totalInterest);
@@ -104,11 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         rowsHTML += `
           <tr>
-            <td><strong>Month ${m}</strong></td>
-            <td>${formatGHS(monthlyPrincipalPayment)}</td>
-            <td>${formatGHS(monthlyInterest)}</td>
-            <td><strong>${formatGHS(monthlyPayment)}</strong></td>
-            <td>${formatGHS(displayBalance)}</td>
+            <td class="p-3"><strong>Month ${m}</strong></td>
+            <td class="p-3">${formatGHS(monthlyPrincipalPayment)}</td>
+            <td class="p-3">${formatGHS(monthlyInterest)}</td>
+            <td class="p-3"><strong>${formatGHS(monthlyPayment)}</strong></td>
+            <td class="p-3">${formatGHS(displayBalance)}</td>
           </tr>
         `;
       }
@@ -116,10 +130,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Live Sync Function for Google Sheets
+  const syncRateFromGoogleSheet = async () => {
+    if (!GOOGLE_SHEET_CSV_URL || !GOOGLE_SHEET_CSV_URL.startsWith('http')) return;
+    try {
+      const res = await fetch(GOOGLE_SHEET_CSV_URL);
+      if (!res.ok) return;
+      const csv = await res.text();
+      const lines = csv.split(/\r?\n/);
+      for (const line of lines) {
+        const cols = line.split(',');
+        for (const col of cols) {
+          const clean = col.replace(/["'%]/g, '').trim();
+          const val = parseFloat(clean);
+          // Look for realistic rate between 0.5% and 30% per month
+          if (!isNaN(val) && val > 0 && val < 50) {
+            currentMonthlyRate = val > 1 ? (val / 100) : val;
+            calculateLoan();
+            console.log(`[Shade Micro-Credit] Synced rate from Google Sheet: ${(currentMonthlyRate * 100).toFixed(2)}%`);
+            return;
+          }
+        }
+      }
+    } catch (e) {
+      // Silently fall back to default rate if offline
+    }
+  };
+
   if (loanAmountInput && loanTenureInput) {
     loanAmountInput.addEventListener('input', calculateLoan);
     loanTenureInput.addEventListener('input', calculateLoan);
     calculateLoan();
+    syncRateFromGoogleSheet();
   }
 
   // Toggle Amortization Schedule Table
