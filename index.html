@@ -195,8 +195,8 @@
         <a href="contact.html" class="font-heading text-sm font-semibold text-slate-600 hover:text-shade-teal transition-colors">Contact</a>
       </div>
 
-      <!-- Action CTAs on Far Right -->
-      <div class="hidden sm:flex items-center gap-3">
+      <!-- Action CTAs on Far Right (Visible on Desktop) -->
+      <div class="hidden lg:flex items-center gap-3">
         <a href="services.html#calculator" class="border border-shade-teal text-shade-teal hover:bg-emerald-50 font-heading font-semibold text-xs px-5 py-2.5 uppercase tracking-wider transition-all">
           Get The Loan
         </a>
@@ -238,7 +238,7 @@
         <div class="lg:col-span-7 flex flex-col items-start lg:pl-6 xl:pl-10">
           
           <!-- Main Title (2 Lines, Massive Bold, Matches Reference Image Exactly) -->
-          <h1 class="text-5xl sm:text-6xl lg:text-[4.5rem] font-bold font-heading text-slate-900 leading-[1.06] tracking-tight mb-3">
+          <h1 class="text-4xl sm:text-5xl lg:text-[4.25rem] font-bold font-heading text-slate-900 leading-[1.08] tracking-tight mb-3">
             Accessible &amp; adaptable<br>
             micro-credit
           </h1>
@@ -262,19 +262,19 @@
           </div>
 
           <!-- Single Green Action Button (Matches Reference Image Exactly) -->
-          <div class="mb-12">
-            <button class="bg-[#01a793] hover:bg-[#008083] text-white font-heading font-semibold text-xs sm:text-sm px-8 py-3.5 shadow-sm hover:shadow transition-all open-modal-btn" type="button">
+          <div class="mb-10 sm:mb-12 w-full sm:w-auto">
+            <button class="w-full sm:w-auto bg-[#01a793] hover:bg-[#008083] text-white font-heading font-semibold text-xs sm:text-sm px-8 py-3.5 shadow-sm hover:shadow transition-all open-modal-btn text-center" type="button">
               Learn more
             </button>
           </div>
 
-          <!-- DUAL SELECTOR CARDS (EXACT MATCH TO REFERENCE DESIGN CARDS) -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full max-w-xl">
-            <!-- Card 1: I want to Support -->
-            <div class="bg-white p-6 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.06)] border-t-2 border-t-[#01a793] flex items-center justify-between cursor-pointer hover:shadow-lg transition-all open-modal-btn" data-product="Business Growth Micro-Loan" role="button" tabindex="0">
+          <!-- DUAL SELECTOR CARDS (REPLACED "I WANT TO SUPPORT" WITH TARGETED BUSINESS CREDIT) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 w-full max-w-xl">
+            <!-- Card 1: Grow My Business -->
+            <div class="bg-white p-5 sm:p-6 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.06)] border-t-2 border-t-[#01a793] flex items-center justify-between cursor-pointer hover:shadow-lg transition-all open-modal-btn" data-product="Business Growth Micro-Loan" role="button" tabindex="0">
               <div>
-                <h3 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-1">I want to Support</h3>
-                <p class="text-xs text-slate-400">Check how you can help</p>
+                <h3 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-1">Grow My Business</h3>
+                <p class="text-xs text-slate-400">Working capital &amp; SME loans</p>
               </div>
               <div class="circle-btn w-9 h-9 bg-[#e8f7f4] flex items-center justify-center text-[#01a793] hover:bg-[#01a793] hover:text-white transition-colors flex-shrink-0 ml-4" style="border-radius: 9999px;">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -282,10 +282,10 @@
             </div>
 
             <!-- Card 2: I need a Loan -->
-            <div class="bg-white p-6 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.06)] flex items-center justify-between cursor-pointer hover:shadow-lg transition-all open-modal-btn" data-product="Diligent Individual Credit" role="button" tabindex="0">
+            <div class="bg-white p-5 sm:p-6 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.06)] flex items-center justify-between cursor-pointer hover:shadow-lg transition-all open-modal-btn" data-product="Diligent Individual Credit" role="button" tabindex="0">
               <div>
                 <h3 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-1">I need a Loan</h3>
-                <p class="text-xs text-slate-400">Check how to take a loan</p>
+                <p class="text-xs text-slate-400">Fast personal &amp; emergency credit</p>
               </div>
               <div class="circle-btn w-9 h-9 bg-[#e8f7f4] flex items-center justify-center text-[#01a793] hover:bg-[#01a793] hover:text-white transition-colors flex-shrink-0 ml-4" style="border-radius: 9999px;">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -295,26 +295,26 @@
         </div>
 
         <!-- RIGHT COLUMN: THE EXACT OVAL WITH THE PHONELIKE DESIGN ON TOP -->
-        <div class="lg:col-span-5 relative flex justify-center items-center py-10">
+        <div class="lg:col-span-5 relative flex justify-center items-center py-8 sm:py-10 overflow-hidden sm:overflow-visible">
           
-          <!-- Large Tilted Green Oval (Matches Reference Image Exactly) -->
-          <div class="hero-oval absolute w-[370px] sm:w-[450px] h-[310px] sm:h-[370px] bg-[#02c39a] -rotate-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-95 shadow-xl" style="border-radius: 46% 54% 50% 50% / 36% 44% 56% 64%;"></div>
+          <!-- Large Tilted Green Oval (Scaled proportionally for mobile) -->
+          <div class="hero-oval absolute w-[280px] sm:w-[380px] md:w-[450px] h-[240px] sm:h-[310px] md:h-[370px] bg-[#02c39a] -rotate-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-95 shadow-xl" style="border-radius: 46% 54% 50% 50% / 36% 44% 56% 64%;"></div>
 
           <!-- Circular Dot Matrix Grid floating behind -->
-          <div class="hero-dot-disc absolute -top-10 right-4 w-44 h-44 bg-dot-matrix opacity-25 z-0 pointer-events-none" style="border-radius: 9999px;"></div>
+          <div class="hero-dot-disc absolute -top-10 right-4 w-36 sm:w-44 h-36 sm:h-44 bg-dot-matrix opacity-25 z-0 pointer-events-none" style="border-radius: 9999px;"></div>
 
           <!-- Floating Terracotta Circle Accent -->
-          <div class="hero-dot-disc absolute -top-8 left-8 sm:left-14 w-12 h-12 bg-[#df8a68] z-0 pointer-events-none" style="border-radius: 9999px;"></div>
+          <div class="hero-dot-disc absolute -top-8 left-6 sm:left-14 w-10 sm:w-12 h-10 sm:h-12 bg-[#df8a68] z-0 pointer-events-none" style="border-radius: 9999px;"></div>
 
           <!-- Floating subtle X crosses -->
-          <span class="absolute top-16 -right-6 text-[#df8a68] text-sm font-bold opacity-70 z-0 pointer-events-none">✕</span>
-          <span class="absolute top-48 -left-6 text-[#df8a68] text-sm font-bold opacity-70 z-0 pointer-events-none">✕</span>
+          <span class="absolute top-16 -right-4 sm:-right-6 text-[#df8a68] text-sm font-bold opacity-70 z-0 pointer-events-none">✕</span>
+          <span class="absolute top-48 -left-4 sm:-left-6 text-[#df8a68] text-sm font-bold opacity-70 z-0 pointer-events-none">✕</span>
 
           <!-- Floating green dot at bottom right -->
-          <div class="hero-dot-disc absolute bottom-8 -right-6 w-4 h-4 bg-[#02c39a] z-0 pointer-events-none" style="border-radius: 9999px;"></div>
+          <div class="hero-dot-disc absolute bottom-8 -right-4 sm:-right-6 w-3 sm:w-4 h-3 sm:h-4 bg-[#02c39a] z-0 pointer-events-none" style="border-radius: 9999px;"></div>
 
-          <!-- Mobile Phone Mockup Device (Sitting on top of the oval) -->
-          <div class="hero-phone relative z-10 w-72 sm:w-[310px] bg-white p-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.18)] border-[6px] border-white" style="border-radius: 38px;">
+          <!-- Mobile Phone Mockup Device (Scaled proportionally for mobile) -->
+          <div class="hero-phone relative z-10 w-[260px] sm:w-[290px] md:w-[310px] bg-white p-4 sm:p-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.18)] border-[5px] sm:border-[6px] border-white" style="border-radius: 36px;">
             <!-- Phone Notch Pill -->
             <div class="w-20 h-4 bg-slate-100 mx-auto mb-2" style="border-radius: 9999px;"></div>
 
@@ -377,7 +377,7 @@
   <!-- ================= OUR PARTNERS / TRUST STRIP ================= -->
   <section class="bg-white border-y border-slate-100 py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center justify-center gap-3 px-5 py-2.5 bg-slate-50 border border-slate-200 text-slate-700 font-heading font-bold text-xs sm:text-sm tracking-wider uppercase shadow-sm">
+      <div class="inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-5 py-2.5 bg-slate-50 border border-slate-200 text-slate-700 font-heading font-bold text-[0.7rem] sm:text-sm tracking-wider uppercase shadow-sm max-w-full text-center">
         <span class="w-2.5 h-2.5 rounded-full bg-shade-teal animate-pulse" style="border-radius: 9999px;"></span>
         Trusted by local enterprises and trade associations across Greater Accra &amp; Ghana
       </div>
@@ -633,7 +633,7 @@
             </div>
 
             <!-- Calculated Results -->
-            <div class="bg-slate-50 border border-slate-200 border-l-4 border-l-shade-teal p-6 mb-8 shadow-sm">
+            <div class="bg-slate-50 border border-slate-200 border-l-4 border-l-shade-teal p-5 sm:p-6 mb-8 shadow-sm">
               <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-200 text-xs">
                 <span class="font-heading font-semibold text-slate-600 flex items-center gap-1.5">
                   <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -644,18 +644,18 @@
                   <span class="text-[0.65rem] text-slate-400 font-mono font-normal">/ Month (Live Sheet)</span>
                 </span>
               </div>
-              <div class="flex items-center justify-between pb-4 border-b border-dashed border-slate-200 mb-4">
-                <span class="font-heading font-semibold text-sm text-slate-700">Monthly Repayment:</span>
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-dashed border-slate-200 mb-4 gap-1.5">
+                <span class="font-heading font-semibold text-xs sm:text-sm text-slate-700">Monthly Repayment:</span>
                 <span class="font-heading font-bold text-2xl sm:text-3xl text-shade-teal" id="monthlyRepayment">GH₵ 1,008.33</span>
               </div>
-              <div class="flex justify-between items-center">
+              <div class="grid grid-cols-2 gap-4">
                 <div>
-                  <span class="text-[0.72rem] text-slate-500 uppercase tracking-wider block">Total Interest</span>
-                  <span class="font-heading font-bold text-base text-slate-900" id="totalInterest">GH₵ 1,050.00</span>
+                  <span class="text-[0.68rem] sm:text-[0.72rem] text-slate-500 uppercase tracking-wider block">Total Interest</span>
+                  <span class="font-heading font-bold text-sm sm:text-base text-slate-900" id="totalInterest">GH₵ 1,050.00</span>
                 </div>
                 <div class="text-right">
-                  <span class="text-[0.72rem] text-slate-500 uppercase tracking-wider block">Total Amount Payable</span>
-                  <span class="font-heading font-bold text-base text-slate-900" id="totalPayable">GH₵ 6,050.00</span>
+                  <span class="text-[0.68rem] sm:text-[0.72rem] text-slate-500 uppercase tracking-wider block">Total Amount Payable</span>
+                  <span class="font-heading font-bold text-sm sm:text-base text-slate-900" id="totalPayable">GH₵ 6,050.00</span>
                 </div>
               </div>
             </div>
@@ -808,8 +808,8 @@
   </footer>
 
   <!-- ================= LOAN APPLICATION MODAL ================= -->
-  <div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto" id="loanModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="relative bg-white w-full max-w-2xl border-t-4 border-t-shade-teal border border-slate-200 shadow-2xl p-6 sm:p-8 my-8">
+  <div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-4 overflow-y-auto" id="loanModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="relative bg-white w-full max-w-2xl border-t-4 border-t-shade-teal border border-slate-200 shadow-2xl p-5 sm:p-8 my-auto max-h-[92vh] overflow-y-auto">
       <div class="flex items-start justify-between pb-4 border-b border-slate-100 mb-6">
         <div>
           <span class="text-[0.68rem] font-heading font-bold text-shade-teal uppercase tracking-widest block">SHADE MICRO-CREDIT</span>

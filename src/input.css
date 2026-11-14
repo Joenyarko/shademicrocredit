@@ -222,6 +222,18 @@ a {
   background: #003032;
 }
 
+/* Mobile Hamburger to X Transformation */
+#menuToggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#menuToggle.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+#menuToggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* ================= BUTTONS ================= */
 .btn {
   display: inline-flex;

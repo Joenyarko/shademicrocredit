@@ -32,19 +32,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
+    const closeMobileMenu = () => {
+      menuToggle.classList.remove('active');
+      navLinks.classList.add('hidden');
+      navLinks.classList.remove('mobile-open');
+    };
+
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       menuToggle.classList.toggle('active');
       navLinks.classList.toggle('hidden');
       navLinks.classList.toggle('mobile-open');
     });
 
-    // Close when clicking any nav link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navLinks.classList.add('hidden');
-        navLinks.classList.remove('mobile-open');
-      });
+    // Close when clicking any nav link or button inside drawer
+    navLinks.querySelectorAll('a, button').forEach(item => {
+      item.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close when clicking outside of navbar & drawer
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close when resizing window to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        closeMobileMenu();
+      }
     });
   }
 
