@@ -3,12 +3,12 @@
  * Aesthetic: Clean White High-End Minimalist Fintech
  * Features:
  * - Dynamic Sticky Navbar on Hero & Inner Pages
- * - Responsive Mobile Drawer Navigation
- * - Interactive Loan Calculator with Amortization Schedule Table
- * - Reusable Loan Application Modal with Auto-Prefill
+ * - Responsive Mobile Drawer Navigation (Full screen slide from right)
+ * - Scheme-Aware Loan Calculator with Fee Breakdown (Weekly 9.2% & Monthly 7.0%)
+ * - Live Google Sheets Rate & Limits Sync
+ * - Dual Lead Capture: Async FormSubmit to Gmail & Instant WhatsApp Fast-Track
  * - FAQ Accordion
  * - Privacy Cookie Consent Banner with LocalStorage Persistence
- * - Contact Form Validation & Feedback
  * - Intersection Observer Scroll Animations
  */
 
@@ -74,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ================= 3. INTERACTIVE LOAN CALCULATOR & GOOGLE SHEETS LIVE SYNC =================
+  // ================= 3. SCHEME-AWARE LOAN CALCULATOR & CHARGES =================
+  const calcSchemeSelect = document.getElementById('calcSchemeSelect');
   const loanAmountInput = document.getElementById('loanAmount');
   const loanTenureInput = document.getElementById('loanTenure');
   const loanAmountDisplay = document.getElementById('loanAmountDisplay');
@@ -85,6 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalInterestEl = document.getElementById('totalInterest');
   const totalPayableEl = document.getElementById('totalPayable') || document.getElementById('summaryTotal');
   const summaryPrincipal = document.getElementById('summaryPrincipal');
+  const installmentLabel = document.getElementById('installmentLabel');
+
+  // Breakdown fee IDs
+  const calcProcessingFee = document.getElementById('calcProcessingFee');
+  const calcInsuranceFee = document.getElementById('calcInsuranceFee');
+  const calcApplicationFee = document.getElementById('calcApplicationFee');
+
+  // Dynamic tenure markers
+  const tenureMinMarker = document.getElementById('tenureMinMarker');
+  const tenureMidMarker = document.getElementById('tenureMidMarker');
+  const tenureMaxMarker = document.getElementById('tenureMaxMarker');
 
   // Dynamic range markers
   const loanMinDisplay = document.getElementById('loanMinDisplay');
@@ -92,13 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const loanMaxDisplay = document.getElementById('loanMaxDisplay');
 
   // GOOGLE SHEET LIVE SYNC CONFIGURATION
-  // Connected to client's live Google Sheet:
   const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSo2DhGVMmlfMDjWyPfWvTI5irzC8MA50gqgl47I-g1hXtH64OQyD51Ktlo6HkMQDHb6o6Nod1RK-gE/pub?gid=0&single=true&output=csv';
 
-  // Default fallback settings if sheet is offline or bounds not specified
-  let currentMonthlyRate = 0.035; // 3.5% flat per month
+  // Base scheme defaults
+  let currentMonthlyRate = 0.070; // 7.0% default for monthly schemes
   let minLoanAmount = 500;
-  let maxLoanAmount = 50000;
+  let maxLoanAmount = 100000;
   let loanStep = 500;
 
   const formatGHS = (val) => {
@@ -112,32 +123,84 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!loanAmountInput || !loanTenureInput) return;
 
     const principal = parseFloat(loanAmountInput.value) || 5000;
-    const months = parseInt(loanTenureInput.value, 10) || 6;
+    const isWeekly = calcSchemeSelect && calcSchemeSelect.value === 'weekly';
+    const tenureVal = parseInt(loanTenureInput.value, 10) || (isWeekly ? 13 : 4);
 
-    const monthlyRate = currentMonthlyRate;
-    const monthlyInterest = principal * monthlyRate;
-    const totalInterest = monthlyInterest * months;
+    let totalInterest = 0;
+    let installment = 0;
+    let appFee = isWeekly ? 20 : 50;
+
+    if (isWeekly) {
+      currentMonthlyRate = 0.092; // 9.2% / month for weekly SME
+      const monthsEquiv = tenureVal / (52 / 12); // ~4.333 weeks per month
+      totalInterest = principal * currentMonthlyRate * monthsEquiv;
+      const totalRepayable = principal + totalInterest;
+      installment = totalRepayable / tenureVal;
+
+      if (loanTenureDisplay) loanTenureDisplay.textContent = `${tenureVal} ${tenureVal === 1 ? 'Week' : 'Weeks'}`;
+      if (installmentLabel) installmentLabel.textContent = 'Estimated Weekly Installment:';
+    } else {
+      // Monthly scheme (PL / AM / BL) at 7.0% flat per month
+      currentMonthlyRate = 0.070;
+      totalInterest = principal * currentMonthlyRate * tenureVal;
+      const totalRepayable = principal + totalInterest;
+      installment = totalRepayable / tenureVal;
+
+      if (loanTenureDisplay) loanTenureDisplay.textContent = `${tenureVal} ${tenureVal === 1 ? 'Month' : 'Months'}`;
+      if (installmentLabel) installmentLabel.textContent = 'Estimated Monthly Installment:';
+    }
+
     const totalRepayable = principal + totalInterest;
-    const monthlyPayment = totalRepayable / months;
+    const processingFee = principal * 0.05; // 5%
+    const insuranceFee = principal * 0.01;  // 1%
 
     if (loanAmountDisplay) loanAmountDisplay.textContent = 'GH₵ ' + Number(principal).toLocaleString();
-    if (loanTenureDisplay) loanTenureDisplay.textContent = `${months} ${months === 1 ? 'Month' : 'Months'}`;
 
     // Update live rate badges and result card rate displays
     const calcRateBadges = document.querySelectorAll('#calcRateBadge, .calc-rate-badge');
     calcRateBadges.forEach(badge => {
-      badge.textContent = `${(monthlyRate * 100).toFixed(2)}% / Mo`;
+      badge.textContent = `${(currentMonthlyRate * 100).toFixed(2)}% / Mo`;
     });
 
     const summaryRateDisplays = document.querySelectorAll('#summaryRateDisplay');
     summaryRateDisplays.forEach(el => {
-      el.textContent = `${(monthlyRate * 100).toFixed(2)}%`;
+      el.textContent = `${(currentMonthlyRate * 100).toFixed(2)}%`;
     });
 
-    if (monthlyRepayment) monthlyRepayment.textContent = formatGHS(monthlyPayment);
+    if (monthlyRepayment) monthlyRepayment.textContent = formatGHS(installment);
     if (totalInterestEl) totalInterestEl.textContent = formatGHS(totalInterest);
     if (totalPayableEl) totalPayableEl.textContent = formatGHS(totalRepayable);
     if (summaryPrincipal) summaryPrincipal.textContent = formatGHS(principal);
+
+    if (calcProcessingFee) calcProcessingFee.textContent = formatGHS(processingFee);
+    if (calcInsuranceFee) calcInsuranceFee.textContent = formatGHS(insuranceFee);
+    if (calcApplicationFee) calcApplicationFee.textContent = formatGHS(appFee);
+  };
+
+  const onSchemeChange = () => {
+    if (!calcSchemeSelect || !loanTenureInput) return;
+    const isWeekly = calcSchemeSelect.value === 'weekly';
+
+    if (isWeekly) {
+      currentMonthlyRate = 0.092;
+      loanTenureInput.min = 4;
+      loanTenureInput.max = 26;
+      loanTenureInput.step = 1;
+      loanTenureInput.value = 13;
+      if (tenureMinMarker) tenureMinMarker.textContent = '4 Weeks';
+      if (tenureMidMarker) tenureMidMarker.textContent = '13 Weeks';
+      if (tenureMaxMarker) tenureMaxMarker.textContent = '26 Weeks';
+    } else {
+      currentMonthlyRate = 0.070;
+      loanTenureInput.min = 1;
+      loanTenureInput.max = 12;
+      loanTenureInput.step = 1;
+      loanTenureInput.value = 4;
+      if (tenureMinMarker) tenureMinMarker.textContent = '1 Month';
+      if (tenureMidMarker) tenureMidMarker.textContent = '4 Months';
+      if (tenureMaxMarker) tenureMaxMarker.textContent = '12 Months';
+    }
+    calculateLoan();
   };
 
   const updateLoanBounds = (min, max, step) => {
@@ -156,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loanMidDisplay) loanMidDisplay.textContent = 'GH₵ ' + Number(mid).toLocaleString();
     if (loanMaxDisplay) loanMaxDisplay.textContent = 'GH₵ ' + Number(maxLoanAmount).toLocaleString();
 
-    // Adjust value if outside new bounds
     let currentVal = parseFloat(loanAmountInput.value) || minLoanAmount;
     if (currentVal < minLoanAmount) loanAmountInput.value = minLoanAmount;
     if (currentVal > maxLoanAmount) loanAmountInput.value = maxLoanAmount;
@@ -183,32 +245,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const label = (cols[0] || '').toLowerCase();
         const rawVal = cols[1] !== undefined ? cols[1] : cols[0];
 
-        // Check for min loan amount
         if (label.includes('min')) {
           const num = parseFloat(rawVal.replace(/[^0-9.]/g, ''));
           if (!isNaN(num) && num > 0) newMin = num;
-        }
-        // Check for max loan amount
-        else if (label.includes('max')) {
+        } else if (label.includes('max')) {
           const num = parseFloat(rawVal.replace(/[^0-9.]/g, ''));
           if (!isNaN(num) && num > 0) newMax = num;
-        }
-        // Check for step
-        else if (label.includes('step')) {
+        } else if (label.includes('step')) {
           const num = parseFloat(rawVal.replace(/[^0-9.]/g, ''));
           if (!isNaN(num) && num > 0) newStep = num;
-        }
-        // Check for interest rate
-        else {
-          for (const col of cols) {
-            const clean = col.replace(/["'%]/g, '').trim();
-            const val = parseFloat(clean);
-            if (!isNaN(val) && val > 0 && val < 50 && !foundRate) {
-              currentMonthlyRate = val > 1 ? (val / 100) : val;
-              foundRate = true;
-              console.log(`[Shade Micro-Credit] Synced rate from Google Sheet: ${(currentMonthlyRate * 100).toFixed(2)}%`);
-            }
-          }
         }
       }
 
@@ -218,8 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       calculateLoan();
     } catch (e) {
-      // Silently fall back to default rate if offline
-      console.warn('[Shade Micro-Credit] Using fallback rate:', e);
+      console.warn('[Shade Micro-Credit] Using standard scheme rates:', e);
     }
   };
 
@@ -227,11 +271,14 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLoanBounds(minLoanAmount, maxLoanAmount, loanStep);
     loanAmountInput.addEventListener('input', calculateLoan);
     loanTenureInput.addEventListener('input', calculateLoan);
+    if (calcSchemeSelect) {
+      calcSchemeSelect.addEventListener('change', onSchemeChange);
+    }
     calculateLoan();
     syncRateFromGoogleSheet();
   }
 
-  // ================= 4. LOAN APPLICATION MODAL & AUTO-PREFILL =================
+  // ================= 4. LOAN APPLICATION MODAL & DUAL LEAD CAPTURE =================
   const modal = document.getElementById('loanModal') || document.getElementById('applicationModal');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const successCloseBtn = document.getElementById('successCloseBtn');
@@ -244,6 +291,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const loanAppForm = document.getElementById('loanAppForm');
   const modalSuccess = document.getElementById('modalSuccess');
   const modalAlert = document.getElementById('modalAlert');
+  const modalSummaryDetails = document.getElementById('modalSummaryDetails');
+  const modalWhatsAppFastTrack = document.getElementById('modalWhatsAppFastTrack');
 
   const openModal = (productName, amount, tenure) => {
     if (!modal) return;
@@ -259,7 +308,16 @@ document.addEventListener('DOMContentLoaded', () => {
       appAmountInput.value = amount;
     }
     if (tenure && appTenureSelect) {
-      appTenureSelect.value = tenure;
+      if (typeof tenure === 'number' || !isNaN(Number(tenure))) {
+        const num = Number(tenure);
+        if (num > 6) {
+          appTenureSelect.value = '13 Weeks';
+        } else {
+          appTenureSelect.value = `${num} Months`;
+        }
+      } else {
+        appTenureSelect.value = tenure;
+      }
     }
     modal.classList.add('active');
     modal.classList.remove('hidden');
@@ -280,7 +338,8 @@ document.addEventListener('DOMContentLoaded', () => {
       modalAlert.textContent = '';
     }
     if (modalSuccess && loanAppForm) {
-      modalSuccess.style.display = 'none';
+      modalSuccess.classList.add('hidden');
+      loanAppForm.classList.remove('hidden');
       loanAppForm.style.display = 'block';
     }
   };
@@ -291,8 +350,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const product = btn.getAttribute('data-product');
       if (btn.id === 'proceedWithCalcBtn' || btn.id === 'calcApplyBtn') {
         const amt = loanAmountInput ? loanAmountInput.value : null;
-        const ten = loanTenureInput ? loanTenureInput.value : null;
-        openModal(product, amt, ten);
+        let ten = null;
+        if (calcSchemeSelect && calcSchemeSelect.value === 'weekly') {
+          ten = '13 Weeks';
+        } else if (loanTenureInput) {
+          ten = `${loanTenureInput.value} Months`;
+        }
+        let selectedProduct = 'SME Loan Monthly (PL)';
+        if (calcSchemeSelect) {
+          const val = calcSchemeSelect.value;
+          if (val === 'weekly') selectedProduct = 'SME Loan Weekly (SLW)';
+          else if (val === 'monthly-auto') selectedProduct = 'Auto Maintenance (AM)';
+          else if (val === 'monthly-business') selectedProduct = 'Business Loan (BL)';
+          else selectedProduct = 'SME Loan Monthly (PL)';
+        }
+        openModal(selectedProduct, amt, ten);
       } else {
         openModal(product, null, null);
       }
@@ -314,31 +386,116 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle Application Form Submission
+  // Handle Application Form Submission (Dual Lead Capture)
   if (loanAppForm) {
-    loanAppForm.addEventListener('submit', (e) => {
+    loanAppForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const nameInput = document.getElementById('fullName') || document.getElementById('appName');
-      const phoneInput = document.getElementById('phoneNumber') || document.getElementById('appPhone');
-      const amountInput = appAmountInput;
-      const pkgSelect = appPackageSelect;
-
-      const name = nameInput ? nameInput.value.trim() : 'Applicant';
-      const phone = phoneInput ? phoneInput.value.trim() : 'Phone';
-      const amount = amountInput ? amountInput.value : '5000';
-      const pkg = pkgSelect ? pkgSelect.value : 'Micro-Credit';
-
-      if (!name || !phone) {
-        alert('Please complete all required fields.');
-        return;
+      
+      const submitBtn = loanAppForm.querySelector('button[type="submit"]');
+      const origBtnText = submitBtn ? submitBtn.innerHTML : 'Submit';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Submitting Application...';
       }
 
+      const name = (document.getElementById('fullName') || {}).value || 'Applicant';
+      const phone = (document.getElementById('phoneNumber') || {}).value || 'N/A';
+      const ghanaCard = (document.getElementById('ghanaCard') || {}).value || 'N/A';
+      const email = (document.getElementById('emailAddress') || {}).value || 'Not provided';
+      const location = (document.getElementById('businessLocation') || {}).value || 'Accra';
+      const scheme = appPackageSelect ? appPackageSelect.value : 'SME Loan Monthly (PL)';
+      const amount = appAmountInput ? appAmountInput.value : '5000';
+      const tenure = appTenureSelect ? appTenureSelect.value : '4 Months';
+      const purpose = (document.getElementById('businessPurpose') || {}).value || 'Business capital';
+
+      // 1. Asynchronous Email Dispatch to shademicrocredit@gmail.com
+      const payload = {
+        _subject: `New Credit Application: ${name} (GH₵ ${Number(amount).toLocaleString()} - ${scheme})`,
+        fullName: name,
+        phoneNumber: phone,
+        ghanaCard: ghanaCard,
+        email: email,
+        businessLocation: location,
+        scheme: scheme,
+        requestedAmount: `GH₵ ${Number(amount).toLocaleString()}`,
+        repaymentTenure: tenure,
+        businessPurpose: purpose,
+        timestamp: new Date().toLocaleString('en-GB', { timeZone: 'Africa/Accra' })
+      };
+
+      try {
+        fetch('https://formsubmit.co/ajax/shademicrocredit@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        }).catch(err => console.log('FormSubmit background notification:', err));
+      } catch (err) {
+        console.warn('FormSubmit fetch failed, falling back:', err);
+      }
+
+      // 2. Pre-generate WhatsApp Fast-Track Link
+      const waText = encodeURIComponent(
+        `*New Loan Application - Shade Micro-Credit Enterprise*\n` +
+        `• *Applicant:* ${name}\n` +
+        `• *Phone:* ${phone}\n` +
+        `• *Ghana Card:* ${ghanaCard}\n` +
+        `• *Location:* ${location}\n` +
+        `• *Scheme:* ${scheme}\n` +
+        `• *Amount:* GH₵ ${Number(amount).toLocaleString()}\n` +
+        `• *Tenure:* ${tenure}\n` +
+        `• *Purpose:* ${purpose}\n\n` +
+        `Please confirm receipt and let me know the inspection/appraisal schedule.`
+      );
+      const waUrl = `https://wa.me/233256099465?text=${waText}`;
+
+      if (modalWhatsAppFastTrack) {
+        modalWhatsAppFastTrack.href = waUrl;
+      }
+
+      // 3. Populate Summary Details
+      if (modalSummaryDetails) {
+        modalSummaryDetails.innerHTML = `
+          <div class="flex justify-between border-b border-slate-200 pb-1.5">
+            <span class="text-slate-500">Applicant:</span>
+            <span class="font-bold text-slate-800">${name}</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-200 pb-1.5">
+            <span class="text-slate-500">Phone Number:</span>
+            <span class="font-bold text-slate-800">${phone}</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-200 pb-1.5">
+            <span class="text-slate-500">Selected Scheme:</span>
+            <span class="font-bold text-shade-teal">${scheme}</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-200 pb-1.5">
+            <span class="text-slate-500">Requested Capital:</span>
+            <span class="font-bold text-slate-900">GH₵ ${Number(amount).toLocaleString()}</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-200 pb-1.5">
+            <span class="text-slate-500">Duration:</span>
+            <span class="font-bold text-slate-800">${tenure}</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-500">Capture Method:</span>
+            <span class="text-emerald-600 font-bold">Email to Branch Desk + WhatsApp</span>
+          </div>
+        `;
+      }
+
+      // 4. Reveal Success State
+      loanAppForm.classList.add('hidden');
+      loanAppForm.style.display = 'none';
       if (modalSuccess) {
-        loanAppForm.style.display = 'none';
+        modalSuccess.classList.remove('hidden');
         modalSuccess.style.display = 'block';
-      } else if (modalAlert) {
-        modalAlert.className = 'form-alert success';
-        modalAlert.textContent = `Thank you, ${name}! Your application for GH₵ ${Number(amount).toLocaleString()} (${pkg}) has been received. Our credit officer will call you at ${phone} within 24 to 48 hours.`;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = origBtnText;
       }
 
       loanAppForm.reset();
@@ -350,19 +507,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactAlert = document.getElementById('contactAlert') || document.getElementById('contactSuccess');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const nameInput = document.getElementById('contactName');
       const phoneInput = document.getElementById('contactPhone');
+      const emailInput = document.getElementById('contactEmail');
+      const subjectInput = document.getElementById('contactSubject');
+      const messageInput = document.getElementById('contactMessage');
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+
       const name = nameInput ? nameInput.value.trim() : 'Valued Client';
       const phone = phoneInput ? phoneInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const subject = subjectInput ? subjectInput.value : 'General Inquiry';
+      const message = messageInput ? messageInput.value.trim() : '';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending Message...';
+      }
+
+      // Dispatch to FormSubmit
+      try {
+        fetch('https://formsubmit.co/ajax/shademicrocredit@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `New Inquiry from ${name} (${subject})`,
+            fullName: name,
+            phone: phone,
+            email: email,
+            inquiryTopic: subject,
+            message: message,
+            timestamp: new Date().toLocaleString('en-GB', { timeZone: 'Africa/Accra' })
+          })
+        }).catch(err => console.log('Contact form notification:', err));
+      } catch (err) {
+        console.warn('Contact dispatch note:', err);
+      }
 
       if (contactAlert) {
-        contactAlert.className = 'form-alert success';
-        contactAlert.textContent = `Thank you, ${name}! Your message has been received by Shade Micro-Credit Enterprise. We will contact you at ${phone} promptly.`;
+        contactAlert.className = 'p-4 text-xs font-semibold bg-emerald-50 text-shade-teal border border-emerald-200 mt-4 block';
+        contactAlert.innerHTML = `Thank you, <strong>${name}</strong>! Your inquiry regarding <em>${subject}</em> has been sent to our credit officers. We will call you at <strong>${phone}</strong> promptly.`;
         contactAlert.style.display = 'block';
       } else {
-        alert(`Thank you, ${name}! Your message has been sent to Shade Micro-Credit Enterprise.`);
+        alert(`Thank you, ${name}! Your inquiry has been sent to Shade Micro-Credit Enterprise.`);
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
       }
 
       contactForm.reset();

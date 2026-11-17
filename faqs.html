@@ -56,15 +56,15 @@
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-shade-mint selection:text-white">
 
-  <!-- ================= CLEAN WHITE NAVBAR (MATCHING REFERENCE DESIGN) ================= -->
-  <nav class="w-full bg-white px-6 sm:px-10 lg:px-16 xl:px-20 py-6 border-b border-slate-100" id="navbar">
+  <!-- ================= CLEAN WHITE NAVBAR (INCREASED PROMINENT LOGO & BRAND NAME) ================= -->
+  <nav class="w-full bg-white px-6 sm:px-10 lg:px-16 xl:px-20 py-5 border-b border-slate-100" id="navbar">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <!-- Logo on Far Left -->
-      <a href="/" class="flex items-center gap-3 group" aria-label="Shade Micro-Credit Enterprise Home">
-        <img src="assets/logo-light.png" alt="Shade Micro-Credit Enterprise Logo" class="h-10 w-auto object-contain" style="height: 40px; width: auto; max-height: 44px;">
+      <!-- Logo on Far Left (Enlarged & Authoritative) -->
+      <a href="/" class="flex items-center gap-3.5 group" aria-label="Shade Micro-Credit Enterprise Home">
+        <img src="assets/logo-light.png" alt="Shade Micro-Credit Enterprise Logo" class="h-12 sm:h-14 w-auto object-contain nav-logo-img" style="height: 52px; width: auto;">
         <div class="flex flex-col">
-          <span class="font-heading font-bold text-slate-900 text-base sm:text-lg tracking-tight group-hover:text-shade-teal transition-colors leading-none">SHADE MICRO-CREDIT</span>
-          <span class="text-[0.65rem] tracking-[0.2em] text-shade-teal font-bold uppercase mt-1">ENTERPRISE</span>
+          <span class="font-heading font-black text-slate-900 text-lg sm:text-xl lg:text-2xl tracking-tight group-hover:text-shade-teal transition-colors leading-none">SHADE MICRO-CREDIT</span>
+          <span class="text-[0.7rem] sm:text-xs tracking-[0.24em] text-shade-teal font-extrabold uppercase mt-1.5">ENTERPRISE</span>
         </div>
       </a>
 
@@ -79,8 +79,8 @@
 
       <!-- Action CTAs on Far Right (Visible on Desktop) -->
       <div class="hidden lg:flex items-center gap-3">
-        <a href="/services#calculator" class="border border-shade-teal text-shade-teal hover:bg-emerald-50 font-heading font-semibold text-xs px-5 py-2.5 uppercase tracking-wider transition-all">
-          Get The Loan
+        <a href="/services#schemes" class="border border-shade-teal text-shade-teal hover:bg-emerald-50 font-heading font-semibold text-xs px-5 py-2.5 uppercase tracking-wider transition-all">
+          Loan Schemes
         </a>
         <button class="bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-xs px-5 py-2.5 uppercase tracking-wider transition-all shadow-sm hover:shadow open-modal-btn" type="button">
           Apply For Credit
@@ -100,10 +100,10 @@
       <!-- Top Row: Logo & Close Button -->
       <div class="flex items-center justify-between pb-6 border-b border-slate-100">
         <a href="/" class="flex items-center gap-3">
-          <img src="assets/logo-light.png" alt="Shade Micro-Credit Logo" class="h-9 w-auto object-contain" style="height: 36px; width: auto;">
+          <img src="assets/logo-light.png" alt="Shade Micro-Credit Logo" class="h-11 w-auto object-contain nav-logo-img" style="height: 44px; width: auto;">
           <div class="flex flex-col">
-            <span class="font-heading font-bold text-slate-900 text-sm tracking-tight leading-none">SHADE MICRO-CREDIT</span>
-            <span class="text-[0.6rem] tracking-[0.2em] text-shade-teal font-bold uppercase mt-1">ENTERPRISE</span>
+            <span class="font-heading font-black text-slate-900 text-base sm:text-lg tracking-tight leading-none">SHADE MICRO-CREDIT</span>
+            <span class="text-[0.68rem] tracking-[0.2em] text-shade-teal font-extrabold uppercase mt-1">ENTERPRISE</span>
           </div>
         </a>
         <button class="w-10 h-10 border border-slate-200 bg-slate-50 text-slate-700 hover:text-slate-900 hover:bg-slate-100 flex items-center justify-center text-2xl font-bold transition-colors" id="menuCloseBtn" aria-label="Close Mobile Navigation Menu">
@@ -137,8 +137,8 @@
 
       <!-- Bottom: Action Buttons & Quick Help -->
       <div class="pt-6 border-t border-slate-100 space-y-3">
-        <a href="/services#calculator" class="w-full block text-center border-2 border-shade-teal text-shade-teal font-heading font-bold text-xs py-3.5 uppercase tracking-wider hover:bg-emerald-50 transition-colors">
-          Get The Loan
+        <a href="/services#schemes" class="w-full block text-center border-2 border-shade-teal text-shade-teal font-heading font-bold text-xs py-3.5 uppercase tracking-wider hover:bg-emerald-50 transition-colors">
+          Loan Schemes
         </a>
         <button class="w-full bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-xs py-3.5 uppercase tracking-wider transition-all shadow-md open-modal-btn" type="button">
           Apply For Credit
@@ -478,7 +478,7 @@
 
         <!-- BRANCH OFFICE & CONTACT -->
         <div class="lg:col-span-3">
-          <h4 class="font-heading font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 pb-2 border-b-2 border-shade-teal inline-block">Branch Office</h4>
+                    <h4 class="font-heading font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 pb-2 border-b-2 border-shade-teal inline-block">Branch Office</h4>
           <div class="text-xs space-y-1.5 leading-relaxed text-slate-500">
             <p class="font-bold text-slate-800">Shade Micro-Credit Enterprise</p>
             <p>Eduardo Mohdlana Road</p>
@@ -488,6 +488,7 @@
               <p><strong>Direct Line:</strong> <a href="tel:0362297113" class="text-shade-teal font-bold hover:underline">0362297113</a></p>
               <p><strong>Mobile/WhatsApp:</strong> <a href="tel:0256099465" class="text-shade-teal font-bold hover:underline">0256099465</a></p>
               <p><strong>Email:</strong> <a href="mailto:shademicrocredit@gmail.com" class="text-shade-teal hover:underline">shademicrocredit@gmail.com</a></p>
+              <p class="text-slate-400 pt-1 text-[0.7rem]"><strong>Operating Hours:</strong> Mon&ndash;Fri 8:00 AM &ndash; 5:00 PM<br>(Closed Saturday, Sunday &amp; Holidays)</p>
             </div>
           </div>
         </div>
@@ -552,13 +553,12 @@
               <input type="text" id="businessLocation" name="businessLocation" required placeholder="e.g. Lartebiokorshie, Makola" class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal">
             </div>
             <div>
-              <label for="preferredProduct" class="block text-xs font-semibold text-slate-700 mb-1">Preferred Credit Solution *</label>
+              <label for="preferredProduct" class="block text-xs font-semibold text-slate-700 mb-1">Preferred Credit Scheme *</label>
               <select id="preferredProduct" name="preferredProduct" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal bg-white">
-                <option value="Business Growth Micro-Loan">Business Growth Micro-Loan</option>
-                <option value="Diligent Individual Credit">Diligent Individual Credit</option>
-                <option value="Market Vendor Quick Stock">Market Vendor Quick Stock</option>
-                <option value="Emergency Working Capital">Emergency Working Capital</option>
-                <option value="Artisan Equipment Lease">Artisan Equipment Lease</option>
+                <option value="SME Loan Weekly (SLW)">SME Loan Weekly (SLW) &bull; 13 Weeks @ 9.2%/mo</option>
+                <option value="SME Loan Monthly (PL)" selected>SME Loan Monthly (PL) &bull; 4 Months @ 7.0%/mo</option>
+                <option value="Auto Maintenance (AM)">Auto Maintenance (AM) &bull; 4 Months @ 7.0%/mo</option>
+                <option value="Business Loan (BL)">Business Loan (BL) &bull; 4 Months @ 7.0%/mo</option>
               </select>
             </div>
           </div>
@@ -566,23 +566,25 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label for="requestedAmount" class="block text-xs font-semibold text-slate-700 mb-1">Requested Amount (GH₵) *</label>
-              <input type="number" id="requestedAmount" name="requestedAmount" min="500" max="50000" step="500" value="5000" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal">
+              <input type="number" id="requestedAmount" name="requestedAmount" min="500" max="100000" step="500" value="5000" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal font-mono">
+              <span class="text-[0.65rem] text-slate-400 mt-0.5 block">Official scheme limit: GH₵ 500 to GH₵ 100,000</span>
             </div>
             <div>
-              <label for="repaymentTenure" class="block text-xs font-semibold text-slate-700 mb-1">Repayment Period (Months) *</label>
+              <label for="repaymentTenure" class="block text-xs font-semibold text-slate-700 mb-1">Repayment Duration / Scheme *</label>
               <select id="repaymentTenure" name="repaymentTenure" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal bg-white">
-                <option value="1">1 Month</option>
-                <option value="3">3 Months</option>
-                <option value="6" selected>6 Months</option>
-                <option value="9">9 Months</option>
-                <option value="12">12 Months</option>
+                <option value="13 Weeks">13 Weeks (Weekly Scheme &bull; SLW)</option>
+                <option value="4 Months" selected>4 Months (Monthly Scheme &bull; PL / AM / BL)</option>
+                <option value="1 Month">1 Month (Short-Term Liquidity)</option>
+                <option value="2 Months">2 Months</option>
+                <option value="3 Months">3 Months</option>
+                <option value="6 Months">6 Months (Graduating Facility)</option>
               </select>
             </div>
           </div>
 
           <div>
             <label for="businessPurpose" class="block text-xs font-semibold text-slate-700 mb-1">Nature of Business &amp; Loan Purpose *</label>
-            <textarea id="businessPurpose" name="businessPurpose" rows="3" required placeholder="Describe what you sell and how the credit facility will be used..." class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal"></textarea>
+            <textarea id="businessPurpose" name="businessPurpose" rows="3" required placeholder="Describe your trade/business, premises, and purpose of credit..." class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal"></textarea>
           </div>
 
           <div class="text-[0.68rem] text-slate-400 leading-normal">
@@ -596,13 +598,21 @@
           </div>
         </form>
 
-        <div class="hidden text-center py-8" id="modalSuccess">
-          <div class="w-12 h-12 bg-emerald-50 text-shade-teal flex items-center justify-center font-bold text-xl mx-auto mb-4 border border-shade-mint">✓</div>
-          <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Application Successfully Submitted!</h3>
-          <p class="text-xs text-slate-600 max-w-md mx-auto mb-6 leading-relaxed">
-            Thank you for trusting Shade Micro-Credit Enterprise. A dedicated credit officer will review your application and contact you at the provided phone number within 24 to 48 hours.
+        <div class="hidden text-center py-6" id="modalSuccess">
+          <div class="w-12 h-12 bg-emerald-50 text-shade-teal flex items-center justify-center font-bold text-xl mx-auto mb-3 border border-shade-mint">✓</div>
+          <h3 class="font-heading font-bold text-xl text-slate-900 mb-1">Application Successfully Recorded!</h3>
+          <p class="text-xs text-slate-600 max-w-md mx-auto mb-4 leading-relaxed" id="modalSuccessMessage">
+            Thank you for applying with Shade Micro-Credit Enterprise. Your details have been captured and forwarded to our credit desk in Lartebiokorshie.
           </p>
-          <button type="button" class="bg-shade-teal text-white font-heading font-bold text-xs px-6 py-2.5 uppercase" id="successCloseBtn">Close</button>
+          <div class="bg-slate-50 border border-slate-200 p-4 max-w-md mx-auto mb-5 text-left text-xs space-y-1.5" id="modalSummaryDetails">
+            <!-- Dynamically populated summary by script.js -->
+          </div>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="#" id="modalWhatsAppFastTrack" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-heading font-bold text-xs px-5 py-2.5 uppercase tracking-wider transition-all shadow-sm">
+              <span>Fast-Track on WhatsApp</span> &rarr;
+            </a>
+            <button type="button" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 font-heading font-bold text-xs px-5 py-2.5 uppercase" id="successCloseBtn">Close</button>
+          </div>
         </div>
       </div>
     </div>

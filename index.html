@@ -160,29 +160,23 @@
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "08:00",
         "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday"],
-        "opens": "09:00",
-        "closes": "14:00"
       }
     ],
-    "priceRange": "GH₵ 500 - GH₵ 50,000"
+    "priceRange": "GH₵ 500 - GH₵ 100,000"
   }
   </script>
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-shade-mint selection:text-white">
 
-  <!-- ================= CLEAN WHITE NAVBAR (MATCHING REFERENCE DESIGN) ================= -->
-  <nav class="w-full bg-white px-6 sm:px-10 lg:px-16 xl:px-20 py-6 border-b border-slate-100" id="navbar">
+  <!-- ================= CLEAN WHITE NAVBAR (INCREASED PROMINENT LOGO & BRAND NAME) ================= -->
+  <nav class="w-full bg-white px-6 sm:px-10 lg:px-16 xl:px-20 py-5 border-b border-slate-100" id="navbar">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <!-- Logo on Far Left -->
-      <a href="/" class="flex items-center gap-3 group" aria-label="Shade Micro-Credit Enterprise Home">
-        <img src="assets/logo-light.png" alt="Shade Micro-Credit Enterprise Logo" class="h-10 w-auto object-contain" style="height: 40px; width: auto;">
+      <!-- Logo on Far Left (Enlarged & Authoritative) -->
+      <a href="/" class="flex items-center gap-3.5 group" aria-label="Shade Micro-Credit Enterprise Home">
+        <img src="assets/logo-light.png" alt="Shade Micro-Credit Enterprise Logo" class="h-12 sm:h-14 w-auto object-contain nav-logo-img" style="height: 52px; width: auto;">
         <div class="flex flex-col">
-          <span class="font-heading font-bold text-slate-900 text-base sm:text-lg tracking-tight group-hover:text-shade-teal transition-colors leading-none">SHADE MICRO-CREDIT</span>
-          <span class="text-[0.65rem] tracking-[0.2em] text-shade-teal font-bold uppercase mt-1">ENTERPRISE</span>
+          <span class="font-heading font-black text-slate-900 text-lg sm:text-xl lg:text-2xl tracking-tight group-hover:text-shade-teal transition-colors leading-none">SHADE MICRO-CREDIT</span>
+          <span class="text-[0.7rem] sm:text-xs tracking-[0.24em] text-shade-teal font-extrabold uppercase mt-1.5">ENTERPRISE</span>
         </div>
       </a>
 
@@ -197,8 +191,8 @@
 
       <!-- Action CTAs on Far Right (Visible on Desktop) -->
       <div class="hidden lg:flex items-center gap-3">
-        <a href="/services#calculator" class="border border-shade-teal text-shade-teal hover:bg-emerald-50 font-heading font-semibold text-xs px-5 py-2.5 uppercase tracking-wider transition-all">
-          Get The Loan
+        <a href="#schemes" class="border border-shade-teal text-shade-teal hover:bg-emerald-50 font-heading font-semibold text-xs px-5 py-2.5 uppercase tracking-wider transition-all">
+          Loan Schemes
         </a>
         <button class="bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-xs px-5 py-2.5 uppercase tracking-wider transition-all shadow-sm hover:shadow open-modal-btn" type="button">
           Apply For Credit
@@ -218,10 +212,10 @@
       <!-- Top Row: Logo & Close Button -->
       <div class="flex items-center justify-between pb-6 border-b border-slate-100">
         <a href="/" class="flex items-center gap-3">
-          <img src="assets/logo-light.png" alt="Shade Micro-Credit Logo" class="h-9 w-auto object-contain" style="height: 36px; width: auto;">
+          <img src="assets/logo-light.png" alt="Shade Micro-Credit Logo" class="h-11 w-auto object-contain nav-logo-img" style="height: 44px; width: auto;">
           <div class="flex flex-col">
-            <span class="font-heading font-bold text-slate-900 text-sm tracking-tight leading-none">SHADE MICRO-CREDIT</span>
-            <span class="text-[0.6rem] tracking-[0.2em] text-shade-teal font-bold uppercase mt-1">ENTERPRISE</span>
+            <span class="font-heading font-black text-slate-900 text-base sm:text-lg tracking-tight leading-none">SHADE MICRO-CREDIT</span>
+            <span class="text-[0.68rem] tracking-[0.2em] text-shade-teal font-extrabold uppercase mt-1">ENTERPRISE</span>
           </div>
         </a>
         <button class="w-10 h-10 border border-slate-200 bg-slate-50 text-slate-700 hover:text-slate-900 hover:bg-slate-100 flex items-center justify-center text-2xl font-bold transition-colors" id="menuCloseBtn" aria-label="Close Mobile Navigation Menu">
@@ -255,8 +249,8 @@
 
       <!-- Bottom: Action Buttons & Quick Help -->
       <div class="pt-6 border-t border-slate-100 space-y-3">
-        <a href="/services#calculator" class="w-full block text-center border-2 border-shade-teal text-shade-teal font-heading font-bold text-xs py-3.5 uppercase tracking-wider hover:bg-emerald-50 transition-colors">
-          Get The Loan
+        <a href="#schemes" class="w-full block text-center border-2 border-shade-teal text-shade-teal font-heading font-bold text-xs py-3.5 uppercase tracking-wider hover:bg-emerald-50 transition-colors">
+          View Loan Schemes
         </a>
         <button class="w-full bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-xs py-3.5 uppercase tracking-wider transition-all shadow-md open-modal-btn" type="button">
           Apply For Credit
@@ -277,10 +271,10 @@
         <!-- LEFT COLUMN: HEADLINE, KICKER, COPY, BUTTON & DUAL SELECTOR CARDS -->
         <div class="lg:col-span-7 flex flex-col items-start lg:pl-6 xl:pl-10">
           
-          <!-- Main Title (2 Lines, Massive Bold, Matches Reference Image Exactly) -->
+          <!-- Main Title (Capitalized Each Word as Requested) -->
           <h1 class="text-4xl sm:text-5xl lg:text-[4.25rem] font-bold font-heading text-slate-900 leading-[1.08] tracking-tight mb-3">
-            Accessible &amp; adaptable<br>
-            micro-credit
+            Accessible &amp; Adaptable<br>
+            Micro-Credit
           </h1>
 
           <!-- Kicker Tag directly UNDER the title (Matches Reference Image Exactly) -->
@@ -288,9 +282,9 @@
             FOR DILIGENT INDIVIDUALS &amp; ENTERPRISES
           </div>
 
-          <!-- Lead Paragraph Description -->
+          <!-- Lead Paragraph Description (Exact User Rephrase) -->
           <p class="text-slate-500 text-sm sm:text-base leading-relaxed max-w-lg mb-4 font-normal">
-            Shade Micro-Credit Enterprise delivers accessible, adaptable micro-credit to hardworking entrepreneurs, traders, and small businesses in Accra who need dependable capital for liquidity and growth.
+            Shade Micro-Credit Enterprise delivers accessible, adaptable micro-credit to hardworking entrepreneurs, traders, and small scale businesses in Accra who need dependable capital for liquidity and growth.
           </p>
 
           <!-- BRAND SLOGAN ACCENT ROW (OPTION 2) -->
@@ -301,31 +295,33 @@
             </span>
           </div>
 
-          <!-- Single Green Action Button (Matches Reference Image Exactly) -->
+          <!-- Single Green Action Button (Changed to Apply now with redirection to #schemes) -->
           <div class="mb-10 sm:mb-12 w-full sm:w-auto">
-            <button class="w-full sm:w-auto bg-[#01a793] hover:bg-[#008083] text-white font-heading font-semibold text-xs sm:text-sm px-8 py-3.5 shadow-sm hover:shadow transition-all open-modal-btn text-center" type="button">
-              Learn more
-            </button>
+            <a href="#schemes" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#01a793] hover:bg-[#008083] text-white font-heading font-bold text-xs sm:text-sm px-8 py-3.5 shadow-sm hover:shadow transition-all text-center uppercase tracking-wider">
+              Apply Now &rarr;
+            </a>
           </div>
 
-          <!-- DUAL SELECTOR CARDS (REPLACED "I WANT TO SUPPORT" WITH TARGETED BUSINESS CREDIT) -->
+          <!-- DUAL SELECTOR CARDS (WEEKLY & MONTHLY SCHEMES) -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 w-full max-w-xl">
-            <!-- Card 1: Grow My Business -->
-            <div class="bg-white p-5 sm:p-6 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.06)] border-t-2 border-t-[#01a793] flex items-center justify-between cursor-pointer hover:shadow-lg transition-all open-modal-btn" data-product="Business Growth Micro-Loan" role="button" tabindex="0">
+            <!-- Card 1: SME Loan Weekly (SLW) -->
+            <div class="bg-white p-5 sm:p-6 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.06)] border-t-2 border-t-[#01a793] flex items-center justify-between cursor-pointer hover:shadow-lg transition-all open-modal-btn" data-product="SME Loan Weekly (SLW)" role="button" tabindex="0">
               <div>
-                <h3 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-1">Grow My Business</h3>
-                <p class="text-xs text-slate-400">Working capital &amp; SME loans</p>
+                <span class="text-[0.65rem] font-heading font-bold text-shade-teal uppercase tracking-wider block mb-0.5">WEEKLY SCHEME</span>
+                <h3 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-1">SME Loan Weekly</h3>
+                <p class="text-xs text-slate-400">13 Weeks &bull; 9.2% / Month</p>
               </div>
               <div class="circle-btn w-9 h-9 bg-[#e8f7f4] flex items-center justify-center text-[#01a793] hover:bg-[#01a793] hover:text-white transition-colors flex-shrink-0 ml-4" style="border-radius: 9999px;">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </div>
             </div>
 
-            <!-- Card 2: I need a Loan -->
-            <div class="bg-white p-5 sm:p-6 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.06)] flex items-center justify-between cursor-pointer hover:shadow-lg transition-all open-modal-btn" data-product="Diligent Individual Credit" role="button" tabindex="0">
+            <!-- Card 2: SME Loan Monthly (PL) & Business Loans -->
+            <div class="bg-white p-5 sm:p-6 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.06)] flex items-center justify-between cursor-pointer hover:shadow-lg transition-all open-modal-btn" data-product="SME Loan Monthly (PL)" role="button" tabindex="0">
               <div>
-                <h3 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-1">I need a Loan</h3>
-                <p class="text-xs text-slate-400">Fast personal &amp; emergency credit</p>
+                <span class="text-[0.65rem] font-heading font-bold text-slate-400 uppercase tracking-wider block mb-0.5">MONTHLY SCHEMES</span>
+                <h3 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-1">SME Monthly &amp; Business</h3>
+                <p class="text-xs text-slate-400">4 Months &bull; 7.0% / Month</p>
               </div>
               <div class="circle-btn w-9 h-9 bg-[#e8f7f4] flex items-center justify-center text-[#01a793] hover:bg-[#01a793] hover:text-white transition-colors flex-shrink-0 ml-4" style="border-radius: 9999px;">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -424,88 +420,238 @@
     </div>
   </section>
 
-  <!-- ================= FEATURE PRODUCT CARDS (EOSIUM 2-COLUMN SECTION) ================= -->
-  <section class="bg-slate-50/60 py-20 lg:py-28">
+  <!-- ================= FEATURE PRODUCT SCHEMES & TABULATED BREAKDOWN ================= -->
+  <section class="bg-slate-50/60 py-20 lg:py-28" id="schemes">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="inline-block px-3 py-1 bg-emerald-50 border-l-2 border-shade-teal text-shade-teal font-heading text-xs font-bold tracking-widest uppercase mb-3">CREDIT PACKAGES</span>
-        <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-4">Structured For Grassroots Growth</h2>
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block px-3 py-1 bg-emerald-50 border-l-2 border-shade-teal text-shade-teal font-heading text-xs font-bold tracking-widest uppercase mb-3">OFFICIAL CREDIT FACILITIES</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-4">Structured Weekly &amp; Monthly Schemes</h2>
         <div class="w-12 h-1 bg-gradient-to-r from-shade-teal to-shade-mint mx-auto mb-4"></div>
         <p class="text-slate-600 text-base leading-relaxed">
-          Transparent, accessible, and structured around your trade cycle. Experience micro-lending designed with respect for your hard work.
+          Tailored micro-credit structures designed around your true cashflow. Clear weekly and monthly schemes with upfront, honest charges.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- PRODUCT 1: BUSINESS GROWTH -->
-        <div class="bg-white border border-slate-200 p-8 sm:p-10 shadow-sm hover:shadow-sharp-teal transition-all flex flex-col justify-between">
+      <!-- 4 SCHEME CARDS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        
+        <!-- SCHEME 1: SME Loan Weekly (SLW) -->
+        <div class="bg-white border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-sharp-teal transition-all flex flex-col justify-between border-t-4 border-t-shade-teal">
           <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="font-heading font-bold text-xs bg-emerald-50 text-shade-teal px-3 py-1 uppercase tracking-wider">ENTERPRISE SCALE</span>
-              <span class="font-heading font-bold text-shade-teal text-base sm:text-lg">GH₵ 0.00</span>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-heading font-bold text-[0.7rem] bg-emerald-50 text-shade-teal px-2.5 py-1 uppercase tracking-wider">CODE: SLW</span>
+              <span class="text-xs font-heading font-bold text-slate-400">13 WEEKS</span>
             </div>
-            <h3 class="text-2xl font-bold font-heading text-slate-900 mb-3">Business Growth Micro-Credit</h3>
-            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-              Direct working capital for shopkeepers, artisans, and enterprise operators expanding premises, purchasing raw materials, or ordering wholesale inventory.
+            <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">SME Loan Weekly</h3>
+            <div class="mb-4">
+              <span class="text-2xl font-bold font-heading text-shade-teal">9.2%</span>
+              <span class="text-xs text-slate-500 font-mono"> / month</span>
+            </div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-5">
+              Working capital for market traders, food vendors, and weekly cashflow retailers needing rapid turnover finance.
             </p>
-            <ul class="space-y-3 mb-8 text-sm text-slate-700">
-              <li class="flex items-center gap-3">
-                <span class="w-1.5 h-1.5 bg-shade-teal flex-shrink-0"></span>
-                <span>Rapid 24&ndash;48 hour assessment at your place of trade</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-1.5 h-1.5 bg-shade-teal flex-shrink-0"></span>
-                <span>Flexible 1 to 12 month repayment tenures</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-1.5 h-1.5 bg-shade-teal flex-shrink-0"></span>
-                <span>Direct disbursement via Mobile Money or commercial bank</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-1.5 h-1.5 bg-shade-teal flex-shrink-0"></span>
-                <span>Graduating limits for loyal and prompt clients</span>
-              </li>
+            <ul class="space-y-2 mb-6 text-xs text-slate-700">
+              <li class="flex items-center gap-2"><span class="text-shade-teal font-bold">&check;</span> Default: GH₵ 5,000</li>
+              <li class="flex items-center gap-2"><span class="text-shade-teal font-bold">&check;</span> Range: GH₵ 500 &ndash; 100,000</li>
+              <li class="flex items-center gap-2"><span class="text-shade-teal font-bold">&check;</span> Mobile Money &amp; Bank</li>
+              <li class="flex items-center gap-2"><span class="text-shade-teal font-bold">&check;</span> App Fee: GH₵ 20</li>
             </ul>
           </div>
-          <button class="font-heading font-bold text-xs text-shade-teal uppercase tracking-wider inline-flex items-center gap-2 border-b-2 border-shade-teal pb-1 hover:text-shade-mint hover:border-shade-mint transition-colors self-start open-modal-btn" data-product="Business Growth Micro-Loan" type="button">
-            Apply For Business Credit &rarr;
+          <button class="w-full py-3 bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all open-modal-btn" data-product="SME Loan Weekly (SLW)" type="button">
+            Apply Weekly Scheme &rarr;
           </button>
         </div>
 
-        <!-- PRODUCT 2: DILIGENT INDIVIDUAL & MARKET VENDOR -->
-        <div class="bg-white border border-slate-200 p-8 sm:p-10 shadow-sm hover:shadow-sharp-teal transition-all flex flex-col justify-between">
+        <!-- SCHEME 2: SME Loan Monthly (PL) -->
+        <div class="bg-white border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-sharp-teal transition-all flex flex-col justify-between border-t-4 border-t-[#01a793]">
           <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="font-heading font-bold text-xs bg-emerald-50 text-shade-mint px-3 py-1 uppercase tracking-wider">MARKET &amp; PERSONAL</span>
-              <span class="font-heading font-bold text-shade-mint text-base sm:text-lg">GH₵ 0.00</span>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-heading font-bold text-[0.7rem] bg-emerald-50 text-shade-mint px-2.5 py-1 uppercase tracking-wider">CODE: PL</span>
+              <span class="text-xs font-heading font-bold text-slate-400">4 MONTHS</span>
             </div>
-            <h3 class="text-2xl font-bold font-heading text-slate-900 mb-3">Diligent Individual &amp; Vendor Credit</h3>
-            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-              Short-term inventory advances and liquidity solutions for market vendors and diligent wage earners handling school fees, medical bills, or weekly market supplies.
+            <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">SME Loan Monthly</h3>
+            <div class="mb-4">
+              <span class="text-2xl font-bold font-heading text-shade-mint">7.0%</span>
+              <span class="text-xs text-slate-500 font-mono"> / month</span>
+            </div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-5">
+              Structured monthly liquidity for established shopkeepers and businesses with predictable 30-day billing cycles.
             </p>
-            <ul class="space-y-3 mb-8 text-sm text-slate-700">
-              <li class="flex items-center gap-3">
-                <span class="w-1.5 h-1.5 bg-shade-mint flex-shrink-0"></span>
-                <span>Weekly or monthly repayment schedules matching your cashflow</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-1.5 h-1.5 bg-shade-mint flex-shrink-0"></span>
-                <span>Simple verification with valid Ghana Card and proof of residence</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-1.5 h-1.5 bg-shade-mint flex-shrink-0"></span>
-                <span>Zero compounding penalty structures or hidden processing fees</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-1.5 h-1.5 bg-shade-mint flex-shrink-0"></span>
-                <span>Courteous and compassionate credit counseling</span>
-              </li>
+            <ul class="space-y-2 mb-6 text-xs text-slate-700">
+              <li class="flex items-center gap-2"><span class="text-shade-mint font-bold">&check;</span> Default: GH₵ 5,000</li>
+              <li class="flex items-center gap-2"><span class="text-shade-mint font-bold">&check;</span> Range: GH₵ 500 &ndash; 100,000</li>
+              <li class="flex items-center gap-2"><span class="text-shade-mint font-bold">&check;</span> Mobile Money &amp; Bank</li>
+              <li class="flex items-center gap-2"><span class="text-shade-mint font-bold">&check;</span> App Fee: GH₵ 50</li>
             </ul>
           </div>
-          <button class="font-heading font-bold text-xs text-shade-mint uppercase tracking-wider inline-flex items-center gap-2 border-b-2 border-shade-mint pb-1 hover:text-shade-teal hover:border-shade-teal transition-colors self-start open-modal-btn" data-product="Diligent Individual Credit" type="button">
-            Apply For Individual Credit &rarr;
+          <button class="w-full py-3 bg-[#01a793] hover:bg-[#008083] text-white font-heading font-bold text-xs uppercase tracking-wider transition-all open-modal-btn" data-product="SME Loan Monthly (PL)" type="button">
+            Apply Monthly Scheme &rarr;
           </button>
+        </div>
+
+        <!-- SCHEME 3: Auto Maintenance (AM) -->
+        <div class="bg-white border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-sharp-teal transition-all flex flex-col justify-between border-t-4 border-t-slate-800">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-heading font-bold text-[0.7rem] bg-slate-100 text-slate-800 px-2.5 py-1 uppercase tracking-wider">CODE: AM</span>
+              <span class="text-xs font-heading font-bold text-slate-400">4 MONTHS</span>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Auto Maintenance</h3>
+            <div class="mb-4">
+              <span class="text-2xl font-bold font-heading text-slate-900">7.0%</span>
+              <span class="text-xs text-slate-500 font-mono"> / month</span>
+            </div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-5">
+              Dedicated credit for commercial drivers, vehicle owners, and transport operators for urgent spare parts and repairs.
+            </p>
+            <ul class="space-y-2 mb-6 text-xs text-slate-700">
+              <li class="flex items-center gap-2"><span class="text-slate-800 font-bold">&check;</span> Default: GH₵ 5,000</li>
+              <li class="flex items-center gap-2"><span class="text-slate-800 font-bold">&check;</span> Range: GH₵ 500 &ndash; 100,000</li>
+              <li class="flex items-center gap-2"><span class="text-slate-800 font-bold">&check;</span> Mobile Money &amp; Bank</li>
+              <li class="flex items-center gap-2"><span class="text-slate-800 font-bold">&check;</span> App Fee: GH₵ 50</li>
+            </ul>
+          </div>
+          <button class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all open-modal-btn" data-product="Auto Maintenance (AM)" type="button">
+            Apply Auto Facility &rarr;
+          </button>
+        </div>
+
+        <!-- SCHEME 4: Business Loan (BL) -->
+        <div class="bg-white border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-sharp-teal transition-all flex flex-col justify-between border-t-4 border-t-shade-teal">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-heading font-bold text-[0.7rem] bg-emerald-50 text-shade-teal px-2.5 py-1 uppercase tracking-wider">CODE: BL</span>
+              <span class="text-xs font-heading font-bold text-slate-400">4 MONTHS</span>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Business Loan</h3>
+            <div class="mb-4">
+              <span class="text-2xl font-bold font-heading text-shade-teal">7.0%</span>
+              <span class="text-xs text-slate-500 font-mono"> / month</span>
+            </div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-5">
+              Direct growth capital for wholesale procurement, store stocking, and enterprise expansion across Accra.
+            </p>
+            <ul class="space-y-2 mb-6 text-xs text-slate-700">
+              <li class="flex items-center gap-2"><span class="text-shade-teal font-bold">&check;</span> Default: GH₵ 5,000</li>
+              <li class="flex items-center gap-2"><span class="text-shade-teal font-bold">&check;</span> Range: GH₵ 500 &ndash; 100,000</li>
+              <li class="flex items-center gap-2"><span class="text-shade-teal font-bold">&check;</span> Mobile Money &amp; Bank</li>
+              <li class="flex items-center gap-2"><span class="text-shade-teal font-bold">&check;</span> App Fee: GH₵ 50</li>
+            </ul>
+          </div>
+          <button class="w-full py-3 bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all open-modal-btn" data-product="Business Loan (BL)" type="button">
+            Apply Business Loan &rarr;
+          </button>
+        </div>
+
+      </div>
+
+      <!-- MASTER TABULATED SCHEMES & CHARGES MATRIX (EXACT CLIENT SPREADSHEET TABLE) -->
+      <div class="bg-white border border-slate-200 shadow-md p-6 sm:p-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100">
+          <div>
+            <span class="text-[0.7rem] font-heading font-bold text-shade-teal uppercase tracking-widest block mb-1">OFFICIAL FEE SCHEDULE</span>
+            <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900">Credit Schemes &amp; Charges Comparison</h3>
+            <p class="text-xs text-slate-500 mt-1">Complete, transparent disclosure of all interest rates, tenures, processing fees, insurance, and terms.</p>
+          </div>
+          <span class="self-start sm:self-auto font-heading font-bold text-[0.68rem] bg-emerald-50 text-shade-teal border border-emerald-200 px-3 py-1.5 uppercase tracking-wider">
+            100% Transparent Terms
+          </span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-slate-100 text-slate-700 font-heading uppercase text-[0.7rem] font-bold border-b border-slate-200">
+                <th class="p-3.5">Product Name</th>
+                <th class="p-3.5">Short Code</th>
+                <th class="p-3.5">Default Amount</th>
+                <th class="p-3.5">Min &ndash; Max Limit</th>
+                <th class="p-3.5">Tenure / Repayment</th>
+                <th class="p-3.5">Interest Rate</th>
+                <th class="p-3.5">Payment Channels</th>
+                <th class="p-3.5">Processing Fee</th>
+                <th class="p-3.5">Insurance Fee</th>
+                <th class="p-3.5">App. Fee</th>
+                <th class="p-3.5">Overdue Charges</th>
+                <th class="p-3.5 text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 font-medium">
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="p-3.5 font-bold text-slate-900">SME Loan Weekly</td>
+                <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-50 text-shade-teal font-mono font-bold">SLW</span></td>
+                <td class="p-3.5 font-mono">GH₵ 5,000</td>
+                <td class="p-3.5 font-mono">GH₵ 500 &ndash; 100,000</td>
+                <td class="p-3.5 font-bold text-slate-800">13 Weeks (Weekly)</td>
+                <td class="p-3.5 font-bold text-shade-teal">9.2% / month</td>
+                <td class="p-3.5">Mobile Money &amp; Bank</td>
+                <td class="p-3.5 font-mono">5%</td>
+                <td class="p-3.5 font-mono">1%</td>
+                <td class="p-3.5 font-mono font-bold">GHC 20</td>
+                <td class="p-3.5 text-slate-600">10% of repayment amount / week</td>
+                <td class="p-3.5 text-center">
+                  <button type="button" class="px-3.5 py-1.5 bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-[0.68rem] uppercase tracking-wider open-modal-btn" data-product="SME Loan Weekly (SLW)">
+                    Apply
+                  </button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="p-3.5 font-bold text-slate-900">SME Loan Monthly</td>
+                <td class="p-3.5"><span class="px-2 py-0.5 bg-slate-100 text-slate-700 font-mono font-bold">PL</span></td>
+                <td class="p-3.5 font-mono">GH₵ 5,000</td>
+                <td class="p-3.5 font-mono">GH₵ 500 &ndash; 100,000</td>
+                <td class="p-3.5 font-bold text-slate-800">4 Months (Monthly)</td>
+                <td class="p-3.5 font-bold text-[#01a793]">7.0% / month</td>
+                <td class="p-3.5">Mobile Money &amp; Bank</td>
+                <td class="p-3.5 font-mono">5%</td>
+                <td class="p-3.5 font-mono">1%</td>
+                <td class="p-3.5 font-mono font-bold">GHC 50</td>
+                <td class="p-3.5 text-slate-600">20% of disbursed amount / month</td>
+                <td class="p-3.5 text-center">
+                  <button type="button" class="px-3.5 py-1.5 bg-[#01a793] hover:bg-[#008083] text-white font-heading font-bold text-[0.68rem] uppercase tracking-wider open-modal-btn" data-product="SME Loan Monthly (PL)">
+                    Apply
+                  </button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="p-3.5 font-bold text-slate-900">Auto Maintenance</td>
+                <td class="p-3.5"><span class="px-2 py-0.5 bg-slate-100 text-slate-700 font-mono font-bold">AM</span></td>
+                <td class="p-3.5 font-mono">GH₵ 5,000</td>
+                <td class="p-3.5 font-mono">GH₵ 500 &ndash; 100,000</td>
+                <td class="p-3.5 font-bold text-slate-800">4 Months (Monthly)</td>
+                <td class="p-3.5 font-bold text-[#01a793]">7.0% / month</td>
+                <td class="p-3.5">Mobile Money &amp; Bank</td>
+                <td class="p-3.5 font-mono">5%</td>
+                <td class="p-3.5 font-mono">1%</td>
+                <td class="p-3.5 font-mono font-bold">GHC 50</td>
+                <td class="p-3.5 text-slate-600">20% of disbursed amount / month</td>
+                <td class="p-3.5 text-center">
+                  <button type="button" class="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white font-heading font-bold text-[0.68rem] uppercase tracking-wider open-modal-btn" data-product="Auto Maintenance (AM)">
+                    Apply
+                  </button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="p-3.5 font-bold text-slate-900">Business Loan</td>
+                <td class="p-3.5"><span class="px-2 py-0.5 bg-slate-100 text-slate-700 font-mono font-bold">BL</span></td>
+                <td class="p-3.5 font-mono">GH₵ 5,000</td>
+                <td class="p-3.5 font-mono">GH₵ 500 &ndash; 100,000</td>
+                <td class="p-3.5 font-bold text-slate-800">4 Months (Monthly)</td>
+                <td class="p-3.5 font-bold text-shade-teal">7.0% / month</td>
+                <td class="p-3.5">Mobile Money &amp; Bank</td>
+                <td class="p-3.5 font-mono">5%</td>
+                <td class="p-3.5 font-mono">1%</td>
+                <td class="p-3.5 font-mono font-bold">GHC 50</td>
+                <td class="p-3.5 text-slate-600">20% of disbursed amount / month</td>
+                <td class="p-3.5 text-center">
+                  <button type="button" class="px-3.5 py-1.5 bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-[0.68rem] uppercase tracking-wider open-modal-btn" data-product="Business Loan (BL)">
+                    Apply
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -625,90 +771,284 @@
             </p>
           </div>
 
-          <a href="/services" class="border border-shade-teal text-shade-teal hover:bg-white font-heading font-semibold text-xs px-6 py-3 uppercase tracking-wider transition-colors shadow-sm">
-            Explore All 5 Credit Facilities &rarr;
+          <a href="#schemes" class="border border-shade-teal text-shade-teal hover:bg-white font-heading font-semibold text-xs px-6 py-3 uppercase tracking-wider transition-colors shadow-sm">
+            View All 4 Loan Schemes &rarr;
           </a>
         </div>
 
         <!-- RIGHT: CALCULATOR CARD -->
         <div class="lg:col-span-7">
           <div class="bg-white border-t-4 border-t-shade-teal border border-slate-200 p-8 sm:p-10 shadow-lg">
-            <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-8">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
               <div>
                 <h3 class="font-heading font-bold text-2xl text-slate-900">Loan Calculator</h3>
-                <span class="text-[0.68rem] text-slate-400 font-mono">Transparent Monthly Rate</span>
+                <span class="text-[0.68rem] text-slate-400 font-mono">Real-Time Scheme Estimation</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="font-heading font-bold text-[0.68rem] bg-emerald-50 text-shade-teal border border-emerald-200 px-3 py-1 tracking-wider uppercase calc-rate-badge">3.50% / Mo</span>
-                <span class="font-heading font-bold text-[0.68rem] bg-slate-100 text-slate-600 border border-slate-200 px-2.5 py-1 tracking-wider uppercase">LIVE</span>
+                <span class="font-heading font-bold text-[0.68rem] bg-emerald-50 text-shade-teal border border-emerald-200 px-3 py-1 tracking-wider uppercase calc-rate-badge" id="calcRateBadge">7.00% / Mo</span>
+                <span class="font-heading font-bold text-[0.68rem] bg-slate-100 text-slate-600 border border-slate-200 px-2.5 py-1 tracking-wider uppercase">OFFICIAL</span>
               </div>
             </div>
 
+            <!-- SCHEME SELECTOR IN CALCULATOR -->
+            <div class="mb-6">
+              <label for="calcSchemeSelect" class="block font-heading font-semibold text-xs uppercase tracking-wider text-slate-700 mb-2">Select Credit Scheme:</label>
+              <select id="calcSchemeSelect" class="w-full border border-slate-300 p-3 bg-white text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:border-shade-teal">
+                <option value="weekly" data-rate="9.2" data-tenure="13" data-fee="20" data-unit="Weeks">SME Loan Weekly (SLW) &bull; 9.2% / Month (13 Weeks)</option>
+                <option value="monthly-sme" data-rate="7.0" data-tenure="4" data-fee="50" data-unit="Months" selected>SME Loan Monthly (PL) &bull; 7.0% / Month (4 Months)</option>
+                <option value="monthly-auto" data-rate="7.0" data-tenure="4" data-fee="50" data-unit="Months">Auto Maintenance (AM) &bull; 7.0% / Month (4 Months)</option>
+                <option value="monthly-business" data-rate="7.0" data-tenure="4" data-fee="50" data-unit="Months">Business Loan (BL) &bull; 7.0% / Month (4 Months)</option>
+              </select>
+            </div>
+
             <!-- Amount Slider -->
-            <div class="mb-8">
+            <div class="mb-6">
               <div class="flex justify-between items-center mb-2">
                 <label for="loanAmount" class="font-heading font-semibold text-sm text-slate-800">Loan Amount (GH₵):</label>
                 <span class="font-heading font-bold text-xl text-shade-teal" id="loanAmountDisplay">GH₵ 5,000</span>
               </div>
-              <input type="range" min="500" max="50000" step="500" value="5000" class="w-full h-2 bg-slate-200 cursor-pointer accent-shade-teal" id="loanAmount">
+              <input type="range" min="500" max="100000" step="500" value="5000" class="w-full h-2 bg-slate-200 cursor-pointer accent-shade-teal" id="loanAmount">
               <div class="flex justify-between text-xs text-slate-400 mt-2 font-mono">
                 <span id="loanMinDisplay">GH₵ 500</span>
-                <span id="loanMidDisplay">GH₵ 25,000</span>
-                <span id="loanMaxDisplay">GH₵ 50,000</span>
+                <span id="loanMidDisplay">GH₵ 50,000</span>
+                <span id="loanMaxDisplay">GH₵ 100,000</span>
               </div>
             </div>
 
             <!-- Tenure Slider -->
-            <div class="mb-8">
+            <div class="mb-6">
               <div class="flex justify-between items-center mb-2">
-                <label for="loanTenure" class="font-heading font-semibold text-sm text-slate-800">Repayment Tenure (Months):</label>
-                <span class="font-heading font-bold text-xl text-shade-teal" id="loanTenureDisplay">6 Months</span>
+                <label for="loanTenure" class="font-heading font-semibold text-sm text-slate-800">Repayment Duration:</label>
+                <span class="font-heading font-bold text-xl text-shade-teal" id="loanTenureDisplay">4 Months</span>
               </div>
-              <input type="range" min="1" max="12" step="1" value="6" class="w-full h-2 bg-slate-200 cursor-pointer accent-shade-teal" id="loanTenure">
-              <div class="flex justify-between text-xs text-slate-400 mt-2">
-                <span>1 Month</span>
-                <span>6 Months</span>
-                <span>12 Months</span>
+              <input type="range" min="1" max="13" step="1" value="4" class="w-full h-2 bg-slate-200 cursor-pointer accent-shade-teal" id="loanTenure">
+              <div class="flex justify-between text-xs text-slate-400 mt-2 font-mono">
+                <span id="tenureMinMarker">1 Month</span>
+                <span id="tenureMidMarker">4 Months</span>
+                <span id="tenureMaxMarker">13 Weeks</span>
               </div>
             </div>
 
             <!-- Calculated Results -->
-            <div class="bg-slate-50 border border-slate-200 border-l-4 border-l-shade-teal p-5 sm:p-6 mb-8 shadow-sm">
-              <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-200 text-xs">
+            <div class="bg-slate-50 border border-slate-200 border-l-4 border-l-shade-teal p-5 sm:p-6 mb-6 shadow-sm">
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200 text-xs">
                 <span class="font-heading font-semibold text-slate-600 flex items-center gap-1.5">
                   <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                   Active Monthly Interest Rate:
                 </span>
                 <span class="font-heading font-bold text-shade-teal text-sm flex items-center gap-1">
-                  <span id="summaryRateDisplay">3.50%</span>
-                  <span class="text-[0.65rem] text-slate-400 font-mono font-normal">/ Month (Live Sheet)</span>
+                  <span id="summaryRateDisplay">7.00%</span>
+                  <span class="text-[0.65rem] text-slate-400 font-mono font-normal">/ Month</span>
                 </span>
               </div>
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-dashed border-slate-200 mb-4 gap-1.5">
-                <span class="font-heading font-semibold text-xs sm:text-sm text-slate-700">Monthly Repayment:</span>
-                <span class="font-heading font-bold text-2xl sm:text-3xl text-shade-teal" id="monthlyRepayment">GH₵ 1,008.33</span>
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-dashed border-slate-200 mb-3 gap-1">
+                <span class="font-heading font-semibold text-xs sm:text-sm text-slate-700" id="installmentLabel">Estimated Monthly Installment:</span>
+                <span class="font-heading font-bold text-2xl sm:text-3xl text-shade-teal" id="monthlyRepayment">GH₵ 1,600.00</span>
               </div>
-              <div class="grid grid-cols-2 gap-4">
+              <div class="grid grid-cols-2 gap-4 pb-3 border-b border-slate-200 mb-3 text-xs">
                 <div>
-                  <span class="text-[0.68rem] sm:text-[0.72rem] text-slate-500 uppercase tracking-wider block">Total Interest</span>
-                  <span class="font-heading font-bold text-sm sm:text-base text-slate-900" id="totalInterest">GH₵ 1,050.00</span>
+                  <span class="text-slate-500 uppercase tracking-wider block text-[0.68rem]">Total Interest</span>
+                  <span class="font-heading font-bold text-sm text-slate-900" id="totalInterest">GH₵ 1,400.00</span>
                 </div>
                 <div class="text-right">
-                  <span class="text-[0.68rem] sm:text-[0.72rem] text-slate-500 uppercase tracking-wider block">Total Amount Payable</span>
-                  <span class="font-heading font-bold text-sm sm:text-base text-slate-900" id="totalPayable">GH₵ 6,050.00</span>
+                  <span class="text-slate-500 uppercase tracking-wider block text-[0.68rem]">Total Repayable</span>
+                  <span class="font-heading font-bold text-sm text-slate-900" id="totalPayable">GH₵ 6,400.00</span>
+                </div>
+              </div>
+              <!-- Transparent Charges Breakdown Row -->
+              <div class="grid grid-cols-3 gap-2 text-center text-[0.68rem] bg-white p-2.5 border border-slate-200">
+                <div>
+                  <span class="text-slate-400 block font-heading">Processing (5%)</span>
+                  <span class="font-bold text-slate-800" id="calcProcessingFee">GH₵ 250.00</span>
+                </div>
+                <div>
+                  <span class="text-slate-400 block font-heading">Insurance (1%)</span>
+                  <span class="font-bold text-slate-800" id="calcInsuranceFee">GH₵ 50.00</span>
+                </div>
+                <div>
+                  <span class="text-slate-400 block font-heading">Application Fee</span>
+                  <span class="font-bold text-slate-800" id="calcApplicationFee">GH₵ 50.00</span>
                 </div>
               </div>
             </div>
 
             <button class="w-full bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold py-4 text-xs uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-sharp-teal open-modal-btn" id="proceedWithCalcBtn" type="button">
-              Proceed With This Loan Request
+              Apply For This Estimated Amount &rarr;
             </button>
-            <p class="text-[0.72rem] text-slate-400 text-center mt-4">
-              * Indicative calculation based on our competitive monthly interest rates. Final terms are confirmed upon verification.
+            <p class="text-[0.7rem] text-slate-400 text-center mt-3 font-normal">
+              * Official figures based on Shade Micro-Credit scheme terms. Processing and insurance deducted upon disbursement.
             </p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ================= DIRECT CONTACT, SEND AN INQUIRY & BRANCH GOOGLE MAP ================= -->
+  <section class="py-16 sm:py-20 bg-slate-50 border-t border-slate-200" id="inquiry">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-block px-3 py-1 bg-white border border-slate-200 text-shade-teal font-heading text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+          DIRECT ASSISTANCE &bull; LARTEBIOKORSHIE
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-4">
+          Visit Our Branch Or Send An Inquiry
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Have questions about our weekly or monthly schemes? Visit our friendly credit desk in Lartebiokorshie or send us an online inquiry below.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+        
+        <!-- BRANCH DETAILS (LEFT COLUMN) -->
+        <div class="lg:col-span-5 bg-white border border-slate-200 p-8 sm:p-10 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="inline-block px-3 py-1 bg-emerald-50 border border-shade-mint/30 text-shade-teal text-xs font-heading font-bold uppercase tracking-wider mb-4">
+              HEADQUARTERS &amp; BRANCH DESK
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900 tracking-tight mb-4">
+              Direct Contact &amp; Physical Branch
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-8">
+              Conveniently situated in Lartebiokorshie to serve individuals, market vendors, transport operators, and commercial enterprises across Greater Accra.
+            </p>
+
+            <div class="space-y-6">
+              <!-- Physical Address -->
+              <div class="border-l-2 border-shade-teal pl-4">
+                <span class="block text-[0.7rem] font-heading font-bold uppercase tracking-widest text-slate-400 mb-1">PHYSICAL ADDRESS</span>
+                <p class="text-slate-900 font-semibold text-sm sm:text-base leading-snug">
+                  Lartebiokorshie, Eduardo Mohdlana Road<br>
+                  <span class="text-slate-600 font-normal text-xs sm:text-sm">Opposite Mohdlana Pre-School, Accra, Ghana</span>
+                </p>
+              </div>
+
+              <!-- Phone Numbers -->
+              <div class="border-l-2 border-shade-teal pl-4">
+                <span class="block text-[0.7rem] font-heading font-bold uppercase tracking-widest text-slate-400 mb-1">DIRECT TELEPHONE LINES</span>
+                <p class="text-slate-900 font-bold text-sm sm:text-base">
+                  <a href="tel:0362297113" class="hover:text-shade-teal transition-colors">0362297113</a>
+                  <span class="text-slate-300 mx-2">&bull;</span>
+                  <a href="tel:0256099465" class="hover:text-shade-teal transition-colors">0256099465</a>
+                </p>
+                <span class="text-xs text-slate-500 mt-0.5 block">Call or WhatsApp loan desk during operating hours</span>
+              </div>
+
+              <!-- Email Address -->
+              <div class="border-l-2 border-shade-teal pl-4">
+                <span class="block text-[0.7rem] font-heading font-bold uppercase tracking-widest text-slate-400 mb-1">OFFICIAL EMAIL</span>
+                <p class="text-slate-900 font-semibold text-sm sm:text-base">
+                  <a href="mailto:shademicrocredit@gmail.com" class="hover:text-shade-teal transition-colors underline decoration-slate-300">shademicrocredit@gmail.com</a>
+                </p>
+              </div>
+
+              <!-- Working Hours (Updated: Mon-Fri 8am-5pm. Closed Sat, Sun, Holidays) -->
+              <div class="border-l-2 border-shade-teal pl-4">
+                <span class="block text-[0.7rem] font-heading font-bold uppercase tracking-widest text-slate-400 mb-1">BRANCH OPERATING HOURS</span>
+                <div class="text-xs sm:text-sm text-slate-700 space-y-1.5 mt-1">
+                  <div class="flex justify-between max-w-xs">
+                    <span class="font-medium text-slate-900">Monday &ndash; Friday:</span>
+                    <span class="font-bold text-slate-900">8:00 AM &ndash; 5:00 PM</span>
+                  </div>
+                  <div class="flex justify-between max-w-xs text-slate-500">
+                    <span>Saturday:</span>
+                    <span class="text-rose-600 font-medium">Closed</span>
+                  </div>
+                  <div class="flex justify-between max-w-xs text-slate-500">
+                    <span>Sunday &amp; Holidays:</span>
+                    <span class="text-rose-600 font-medium">Closed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-slate-500">Need instant loan pre-assessment?</span>
+            <button class="bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-xs px-4 py-2 uppercase tracking-wider open-modal-btn" type="button">
+              Apply Online
+            </button>
+          </div>
+        </div>
+
+        <!-- QUICK MESSAGE / INQUIRY FORM (RIGHT COLUMN) -->
+        <div class="lg:col-span-7 bg-white border border-slate-200 p-8 sm:p-10 shadow-sm">
+          <div class="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-heading font-bold uppercase tracking-wider mb-4">
+            ONLINE INQUIRY DESK
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900 tracking-tight mb-2">
+            Send An Inquiry
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-8">
+            Have a question about our weekly schemes, interest rates, or eligibility? Send us a direct note and our loan desk will get back to you promptly.
+          </p>
+
+          <form id="contactForm" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="contactName" class="block text-xs font-heading font-bold text-slate-700 uppercase tracking-wider mb-2">Full Name *</label>
+                <input type="text" id="contactName" required placeholder="e.g. Kwesi Mensah" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:bg-white focus:border-shade-teal focus:ring-1 focus:ring-shade-teal outline-none transition-all">
+              </div>
+              <div>
+                <label for="contactPhone" class="block text-xs font-heading font-bold text-slate-700 uppercase tracking-wider mb-2">Phone Number *</label>
+                <input type="tel" id="contactPhone" required placeholder="e.g. 0244123456" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:bg-white focus:border-shade-teal focus:ring-1 focus:ring-shade-teal outline-none transition-all">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="contactEmail" class="block text-xs font-heading font-bold text-slate-700 uppercase tracking-wider mb-2">Email Address (Optional)</label>
+                <input type="email" id="contactEmail" placeholder="e.g. kwesi@example.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:bg-white focus:border-shade-teal focus:ring-1 focus:ring-shade-teal outline-none transition-all">
+              </div>
+              <div>
+                <label for="contactSubject" class="block text-xs font-heading font-bold text-slate-700 uppercase tracking-wider mb-2">Inquiry Topic *</label>
+                <select id="contactSubject" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:bg-white focus:border-shade-teal focus:ring-1 focus:ring-shade-teal outline-none transition-all bg-white">
+                  <option value="General Inquiry">General Credit Inquiry</option>
+                  <option value="SME Loan Weekly (SLW)">SME Loan Weekly (SLW)</option>
+                  <option value="SME Loan Monthly (PL)">SME Loan Monthly (PL)</option>
+                  <option value="Auto Maintenance (AM)">Auto Maintenance (AM)</option>
+                  <option value="Business Loan (BL)">Business Loan (BL)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="contactMessage" class="block text-xs font-heading font-bold text-slate-700 uppercase tracking-wider mb-2">Message *</label>
+              <textarea id="contactMessage" rows="4" required placeholder="Tell us about your financing requirement or question..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:bg-white focus:border-shade-teal focus:ring-1 focus:ring-shade-teal outline-none transition-all"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-shade-teal hover:bg-shade-dark text-white font-heading font-bold text-xs uppercase tracking-widest transition-all shadow-sm hover:shadow">
+              Send Message
+            </button>
+            <div id="contactAlert" class="hidden p-4 text-xs font-semibold"></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- GOOGLE MAP SECTION -->
+      <div class="bg-white border border-slate-200 p-6 sm:p-8 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
+          <div>
+            <span class="inline-block px-2.5 py-0.5 bg-emerald-50 text-shade-teal text-[0.7rem] font-heading font-bold uppercase tracking-widest mb-1">
+              GOOGLE MAPS LOCATION
+            </span>
+            <h3 class="text-lg sm:text-xl font-bold font-heading text-slate-900">
+              Shade Micro-Credit Enterprise &bull; Lartebiokorshie Branch
+            </h3>
+            <p class="text-xs text-slate-500 mt-1">Eduardo Mohdlana Road (Opposite Mohdlana Pre-School), Lartebiokorshie, Accra, Ghana</p>
+          </div>
+          <a href="https://maps.google.com/?q=Mohdlana+Preschool+Lartebiokorshie+Accra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 self-start sm:self-auto px-4 py-2.5 border border-shade-teal text-shade-teal hover:bg-shade-teal hover:text-white font-heading text-xs font-bold uppercase tracking-wider transition-all">
+            Open in Google Maps &rarr;
+          </a>
+        </div>
+
+        <div class="relative w-full h-[400px] overflow-hidden border border-slate-200 shadow-inner">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.1165543266084!2d-0.24257162501500348!3d5.549733994430533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf97119bbf92bd%3A0x3af3da0c0131938b!2sMohdlana%20Preschool!5e0!3m2!1sen!2sgh!4v1794506794418!5m2!1sen!2sgh" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" class="w-full h-full"></iframe>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -892,13 +1232,12 @@
               <input type="text" id="businessLocation" name="businessLocation" required placeholder="e.g. Lartebiokorshie, Makola" class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal">
             </div>
             <div>
-              <label for="preferredProduct" class="block text-xs font-semibold text-slate-700 mb-1">Preferred Credit Solution *</label>
+              <label for="preferredProduct" class="block text-xs font-semibold text-slate-700 mb-1">Preferred Credit Scheme *</label>
               <select id="preferredProduct" name="preferredProduct" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal bg-white">
-                <option value="Business Growth Micro-Loan">Business Growth Micro-Loan</option>
-                <option value="Diligent Individual Credit">Diligent Individual Credit</option>
-                <option value="Market Vendor Quick Stock">Market Vendor Quick Stock</option>
-                <option value="Emergency Working Capital">Emergency Working Capital</option>
-                <option value="Artisan Equipment Lease">Artisan Equipment Lease</option>
+                <option value="SME Loan Weekly (SLW)">SME Loan Weekly (SLW) &bull; 13 Weeks @ 9.2%/mo</option>
+                <option value="SME Loan Monthly (PL)" selected>SME Loan Monthly (PL) &bull; 4 Months @ 7.0%/mo</option>
+                <option value="Auto Maintenance (AM)">Auto Maintenance (AM) &bull; 4 Months @ 7.0%/mo</option>
+                <option value="Business Loan (BL)">Business Loan (BL) &bull; 4 Months @ 7.0%/mo</option>
               </select>
             </div>
           </div>
@@ -906,23 +1245,25 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label for="requestedAmount" class="block text-xs font-semibold text-slate-700 mb-1">Requested Amount (GH₵) *</label>
-              <input type="number" id="requestedAmount" name="requestedAmount" min="500" max="50000" step="500" value="5000" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal">
+              <input type="number" id="requestedAmount" name="requestedAmount" min="500" max="100000" step="500" value="5000" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal font-mono">
+              <span class="text-[0.65rem] text-slate-400 mt-0.5 block">Official scheme limit: GH₵ 500 to GH₵ 100,000</span>
             </div>
             <div>
-              <label for="repaymentTenure" class="block text-xs font-semibold text-slate-700 mb-1">Repayment Period (Months) *</label>
+              <label for="repaymentTenure" class="block text-xs font-semibold text-slate-700 mb-1">Repayment Duration / Scheme *</label>
               <select id="repaymentTenure" name="repaymentTenure" required class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal bg-white">
-                <option value="1">1 Month</option>
-                <option value="3">3 Months</option>
-                <option value="6" selected>6 Months</option>
-                <option value="9">9 Months</option>
-                <option value="12">12 Months</option>
+                <option value="13 Weeks">13 Weeks (Weekly Scheme &bull; SLW)</option>
+                <option value="4 Months" selected>4 Months (Monthly Scheme &bull; PL / AM / BL)</option>
+                <option value="1 Month">1 Month (Short-Term Liquidity)</option>
+                <option value="2 Months">2 Months</option>
+                <option value="3 Months">3 Months</option>
+                <option value="6 Months">6 Months (Graduating Facility)</option>
               </select>
             </div>
           </div>
 
           <div>
             <label for="businessPurpose" class="block text-xs font-semibold text-slate-700 mb-1">Nature of Business &amp; Loan Purpose *</label>
-            <textarea id="businessPurpose" name="businessPurpose" rows="3" required placeholder="Describe what you sell and how the credit facility will be used..." class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal"></textarea>
+            <textarea id="businessPurpose" name="businessPurpose" rows="3" required placeholder="Describe your trade/business, premises, and purpose of credit..." class="w-full border border-slate-200 p-2.5 text-xs text-slate-800 focus:outline-none focus:border-shade-teal"></textarea>
           </div>
 
           <div class="text-[0.68rem] text-slate-400 leading-normal">
@@ -936,13 +1277,21 @@
           </div>
         </form>
 
-        <div class="hidden text-center py-8" id="modalSuccess">
-          <div class="w-12 h-12 bg-emerald-50 text-shade-teal flex items-center justify-center font-bold text-xl mx-auto mb-4 border border-shade-mint">✓</div>
-          <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Application Successfully Submitted!</h3>
-          <p class="text-xs text-slate-600 max-w-md mx-auto mb-6 leading-relaxed">
-            Thank you for trusting Shade Micro-Credit Enterprise. A dedicated credit officer will review your application and contact you at the provided phone number within 24 to 48 hours.
+        <div class="hidden text-center py-6" id="modalSuccess">
+          <div class="w-12 h-12 bg-emerald-50 text-shade-teal flex items-center justify-center font-bold text-xl mx-auto mb-3 border border-shade-mint">✓</div>
+          <h3 class="font-heading font-bold text-xl text-slate-900 mb-1">Application Successfully Recorded!</h3>
+          <p class="text-xs text-slate-600 max-w-md mx-auto mb-4 leading-relaxed" id="modalSuccessMessage">
+            Thank you for applying with Shade Micro-Credit Enterprise. Your details have been captured and forwarded to our credit desk in Lartebiokorshie.
           </p>
-          <button type="button" class="bg-shade-teal text-white font-heading font-bold text-xs px-6 py-2.5 uppercase" id="successCloseBtn">Close</button>
+          <div class="bg-slate-50 border border-slate-200 p-4 max-w-md mx-auto mb-5 text-left text-xs space-y-1.5" id="modalSummaryDetails">
+            <!-- Dynamically populated summary by script.js -->
+          </div>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="#" id="modalWhatsAppFastTrack" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-heading font-bold text-xs px-5 py-2.5 uppercase tracking-wider transition-all shadow-sm">
+              <span>Fast-Track on WhatsApp</span> &rarr;
+            </a>
+            <button type="button" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 font-heading font-bold text-xs px-5 py-2.5 uppercase" id="successCloseBtn">Close</button>
+          </div>
         </div>
       </div>
     </div>

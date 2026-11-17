@@ -83,7 +83,13 @@ a {
 }
 
 /* ================= NAV LOGO CONSTRAINTS (PREVENT GIANT IMAGE BUG) ================= */
-.nav-logo-img,
+.nav-logo-img {
+  height: 52px !important;
+  max-height: 58px !important;
+  width: auto !important;
+  object-fit: contain;
+}
+
 .footer-logo-img,
 .phone-logo {
   height: 44px !important;
