@@ -84,10 +84,10 @@ a {
 
 /* ================= NAV LOGO CONSTRAINTS (PREVENT GIANT IMAGE BUG) ================= */
 .nav-logo-img {
-  height: 52px !important;
-  max-height: 58px !important;
+  height: 62px !important;
+  max-height: 70px !important;
   width: auto !important;
-  object-fit: contain;
+  display: block;
 }
 
 .footer-logo-img,
